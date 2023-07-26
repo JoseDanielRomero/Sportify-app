@@ -1,0 +1,64 @@
+@media screen and (max-width: 480px) {
+
+    .DashboardPage {
+        height: auto;
+        width: 100vw;
+        padding: 0 5%;
+    }
+
+    .header {
+        height: 12vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+    }
+
+    .logo-image {
+        height: 35%;
+    }
+
+    .logo-text {
+        font-family: 'Azeret Mono', monospace;
+        font-size: 1.6rem;
+        letter-spacing: -0.526px;
+    }
+
+    .selectbox-form {
+        display: flex;
+        width: 80px;
+        justify-content: center;
+        align-items: center;
+        background-color: #FF5050;
+        border: 2px solid #FF5050;
+        height: 30px;
+        outline: none;
+        margin: 0;     
+        font-family: Bebas Neue;
+        font-size: .9rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        color: #FAFAFA;
+    }
+
+    .dropdown-box {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .triangle-for-button {
+        height: 31px;
+    }
+    
+}
