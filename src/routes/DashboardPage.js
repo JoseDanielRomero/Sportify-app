@@ -6,6 +6,7 @@ import triangleLeft from '../images/triangle-left.svg'
 import triangleRight from '../images/triangle-right.svg'
 import axios from 'axios'
 import SourceButton from '../components/SourceButton'
+import FixtureSwitcher from '../components/FixtureSwitcher'
 
 function DashboardPage({ options }) {
 
@@ -42,8 +43,6 @@ function DashboardPage({ options }) {
 
   },[actualContent])
 
-  console.log(favLeagues)
-
   return (
     <div className='DashboardPage'>
       <header className='header'>
@@ -64,7 +63,7 @@ function DashboardPage({ options }) {
         </div>
       </header>
       <main>
-        <div className='source-button-container'>
+        <section className='source-button-container'>
           {actualContent == 'league' ? favLeagues.map(league => (
             <SourceButton 
               key={league.id}
@@ -78,7 +77,8 @@ function DashboardPage({ options }) {
               name={league.name}
             />
           ))}
-        </div>
+        </section>
+        <FixtureSwitcher />
       </main>
     </div>
   )

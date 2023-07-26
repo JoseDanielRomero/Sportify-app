@@ -6,7 +6,6 @@ export const ContentContext = createContext([])
 export const LeaguesContext = createContext([])
 export const TeamsContext = createContext([])
 
-
 function App() {
   const options = [
     {value: 'league', text: 'LEAGUES'},
@@ -43,19 +42,18 @@ function App() {
   const [favLeagues, setFavLeagues] = useState(favoriteLeagues);
   const [favTeams, setFavTeams] = useState(favoriteTeams);
 
-
   return (
-    <LeaguesContext.Provider value={{ favLeagues, setFavLeagues }} >
-      <TeamsContext.Provider value={{ favTeams, setFavTeams }} >
-        <ContentContext.Provider value={{ actualContent, setActualContent }}>
-          <HashRouter>
-            <Routes>
-              <Route path='/' element={<DashboardPage options={options} />} />
-            </Routes>
-          </HashRouter>
-      </ContentContext.Provider>
-      </TeamsContext.Provider>
-    </LeaguesContext.Provider>
+      <LeaguesContext.Provider value={{ favLeagues, setFavLeagues }} >
+        <TeamsContext.Provider value={{ favTeams, setFavTeams }} >
+          <ContentContext.Provider value={{ actualContent, setActualContent }}>
+            <HashRouter>
+              <Routes>
+                <Route path='/' element={<DashboardPage options={options} />} />
+              </Routes>
+            </HashRouter>
+        </ContentContext.Provider>
+        </TeamsContext.Provider>
+      </LeaguesContext.Provider>
   );
 }
 
