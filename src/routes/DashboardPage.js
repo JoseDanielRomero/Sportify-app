@@ -5,6 +5,7 @@ import { ContentContext, LeaguesContext, TeamsContext } from '../App'
 import triangleLeft from '../images/triangle-left.svg'
 import triangleRight from '../images/triangle-right.svg'
 import axios from 'axios'
+import SourceButton from '../components/SourceButton'
 
 function DashboardPage({ options }) {
 
@@ -41,6 +42,8 @@ function DashboardPage({ options }) {
 
   },[actualContent])
 
+  console.log(favLeagues)
+
   return (
     <div className='DashboardPage'>
       <header className='header'>
@@ -59,8 +62,24 @@ function DashboardPage({ options }) {
           </select>
           <img className='triangle-for-button' src={triangleRight} />
         </div>
-
       </header>
+      <main>
+        <div className='source-button-container'>
+          {actualContent == 'league' ? favLeagues.map(league => (
+            <SourceButton 
+              key={league.id}
+              imageId={league.id}
+              name={league.name}
+            />
+          )) : favTeams.map(league => (
+            <SourceButton 
+              key={league.id}
+              imageId={league.id}
+              name={league.name}
+            />
+          ))}
+        </div>
+      </main>
     </div>
   )
 }

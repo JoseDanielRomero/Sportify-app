@@ -6,8 +6,41 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: flex-start;
+        gap: 5px;
+    }
+
+    .source-button-box-image {
+        height: 60%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         justify-content: center;
         border: 1.5px solid #EEEDED;
+    }
+
+    .source-button-box-text {
+        height: 20%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .source-button-name {
+        margin: 0;
+    }
+
+    .source-button-image {
+        object-fit: cover;
+        width: 80%;
+    }
+
+    .source-button-name {
+        font-size: .8rem;
+        text-align: center;
     }
 
 }
