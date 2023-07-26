@@ -3,6 +3,9 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import DashboardPage from './routes/DashboardPage';
 
 export const ContentContext = createContext([])
+export const LeaguesContext = createContext([])
+export const TeamsContext = createContext([])
+
 
 function App() {
   const options = [
@@ -10,16 +13,49 @@ function App() {
     {value: 'team', text: 'TEAMS'},
   ]
 
-  const [actualContent, setActualContent] = useState(options[0].value)
+  const favoriteLeagues = [
+    {
+      id: '242',
+      name: 'LigaPro'
+    }, 
+    {
+      id: '140',
+      name: 'LaLiga'
+    }
+  ]
+
+  const favoriteTeams = [
+    {
+      id: '451',
+      name: 'Boca'
+    }, 
+    {
+      id: '1152',
+      name: 'Barcelona'
+    },
+    {
+      id: '51',
+      name: 'Brighton'
+    }
+  ]
+
+  const [actualContent, setActualContent] = useState(options[0].value);
+  const [favLeagues, setFavLeagues] = useState(favoriteLeagues);
+  const [favTeams, setFavTeams] = useState(favoriteTeams);
+
 
   return (
-    <ContentContext.Provider value={{ actualContent, setActualContent }}>
-      <HashRouter>
-        <Routes>
-          <Route path='/' element={<DashboardPage options={options} />} />
-        </Routes>
-      </HashRouter>
-    </ContentContext.Provider>
+    <LeaguesContext.Provider value={{ favLeagues, setFavLeagues }} >
+      <TeamsContext.Provider value={{ favTeams, setFavTeams }} >
+        <ContentContext.Provider value={{ actualContent, setActualContent }}>
+          <HashRouter>
+            <Routes>
+              <Route path='/' element={<DashboardPage options={options} />} />
+            </Routes>
+          </HashRouter>
+      </ContentContext.Provider>
+      </TeamsContext.Provider>
+    </LeaguesContext.Provider>
   );
 }
 
