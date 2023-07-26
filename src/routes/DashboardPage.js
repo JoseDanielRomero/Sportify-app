@@ -1,7 +1,7 @@
 import '../stylesheets/DashboardPage.css'
 import logoIcon from '../images/logo.svg'
 import { useContext, useEffect, useState } from 'react'
-import { ContentContext, LeaguesContext, TeamsContext } from '../App'
+import { ContentContext, LeaguesContext, SourceIdContext, TeamsContext } from '../App'
 import triangleLeft from '../images/triangle-left.svg'
 import triangleRight from '../images/triangle-right.svg'
 import axios from 'axios'
@@ -12,12 +12,17 @@ function DashboardPage({ options }) {
 
   const { favLeagues } = useContext(LeaguesContext)
   const { favTeams } = useContext(TeamsContext)
-
+  const { sourceId, setSourceId } = useContext(SourceIdContext)
   const [database, setDatabase] = useState([])
   const { actualContent, setActualContent } = useContext(ContentContext)
 
   const handleChangeSelectbox = (event) => {
     setActualContent(event.target.value)
+    if (actualContent == 'league') {
+      setSourceId(favTeams[0].id)
+    } else {
+      setSourceId(favLeagues[0].id)
+    }
   }
 
   useEffect(() => {
@@ -69,12 +74,14 @@ function DashboardPage({ options }) {
               key={league.id}
               imageId={league.id}
               name={league.name}
+              array={favLeagues}
             />
-          )) : favTeams.map(league => (
+          )) : favTeams.map(teams => (
             <SourceButton 
-              key={league.id}
-              imageId={league.id}
-              name={league.name}
+              key={teams.id}
+              imageId={teams.id}
+              name={teams.name}
+              array={favTeams}
             />
           ))}
         </section>

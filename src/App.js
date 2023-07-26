@@ -5,6 +5,7 @@ import DashboardPage from './routes/DashboardPage';
 export const ContentContext = createContext([])
 export const LeaguesContext = createContext([])
 export const TeamsContext = createContext([])
+export const SourceIdContext = createContext('')
 
 function App() {
   const options = [
@@ -41,8 +42,10 @@ function App() {
   const [actualContent, setActualContent] = useState(options[0].value);
   const [favLeagues, setFavLeagues] = useState(favoriteLeagues);
   const [favTeams, setFavTeams] = useState(favoriteTeams);
+  const [sourceId, setSourceId] = useState(favLeagues[0].id)
 
   return (
+    <SourceIdContext.Provider value={{ sourceId, setSourceId }} >
       <LeaguesContext.Provider value={{ favLeagues, setFavLeagues }} >
         <TeamsContext.Provider value={{ favTeams, setFavTeams }} >
           <ContentContext.Provider value={{ actualContent, setActualContent }}>
@@ -54,6 +57,8 @@ function App() {
         </ContentContext.Provider>
         </TeamsContext.Provider>
       </LeaguesContext.Provider>
+    </SourceIdContext.Provider>
+      
   );
 }
 

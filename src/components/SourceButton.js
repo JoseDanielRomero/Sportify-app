@@ -1,17 +1,25 @@
 import { useContext } from 'react'
-import { ContentContext } from '../App'
+import { ContentContext, LeaguesContext, SourceIdContext, TeamsContext } from '../App'
 import '../stylesheets/SourceButton.css'
 
-function SourceButton({ name, imageId }) {
+function SourceButton({ name, imageId, array }) {
 
+  const { favLeagues } = useContext(LeaguesContext)
+  const { favTeams } = useContext(TeamsContext)
   const { actualContent } = useContext(ContentContext)
+  const { sourceId, setSourceId } = useContext(SourceIdContext)
   const formatType = actualContent + 's'
+
+  const handleClickSource = () => {
+    const findId = array.findIndex((element) => element.id === imageId);
+    setSourceId(array[findId].id) 
+  }
 
   return (
     <div className='source-button-box'>
-      <div className='source-button-box-image'>
+      <button className='source-button-box-image' onClick={handleClickSource} >
         <img className='source-button-image' src={`https://media.api-sports.io/football/${formatType}/${imageId}.png`} />
-      </div>
+      </button>
       <div className='source-button-box-text'>
         <p className='source-button-name'>{name}</p>
       </div>
@@ -19,4 +27,4 @@ function SourceButton({ name, imageId }) {
   )
 }
 
-export default SourceButton
+export default SourceButton;
