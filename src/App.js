@@ -16,26 +16,31 @@ function App() {
   const favoriteLeagues = [
     {
       id: '242',
-      name: 'LigaPro'
+      name: 'LigaPro',
+      active: false
     }, 
     {
       id: '140',
-      name: 'LaLiga'
+      name: 'LaLiga',
+      active: false
     }
   ]
 
   const favoriteTeams = [
     {
       id: '451',
-      name: 'Boca'
+      name: 'Boca',
+      active: false
     }, 
     {
       id: '1152',
-      name: 'Barcelona'
+      name: 'Barcelona',
+      active: false
     },
     {
       id: '51',
-      name: 'Brighton'
+      name: 'Brighton',
+      active: false
     }
   ]
 

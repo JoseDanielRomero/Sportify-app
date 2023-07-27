@@ -10,11 +10,21 @@ import FixtureSwitcher from '../components/FixtureSwitcher'
 
 function DashboardPage({ options }) {
 
-  const { favLeagues } = useContext(LeaguesContext)
-  const { favTeams } = useContext(TeamsContext)
+  const { favLeagues, setFavLeagues } = useContext(LeaguesContext)
+  const { favTeams, setFavTeams } = useContext(TeamsContext)
   const { sourceId, setSourceId } = useContext(SourceIdContext)
   const [database, setDatabase] = useState([])
   const { actualContent, setActualContent } = useContext(ContentContext)
+
+  useEffect(() => {
+    const copyFavLeagues = [...favLeagues]
+    copyFavLeagues[0].active = true
+    setFavLeagues(copyFavLeagues)
+
+    const copyFavTeams = [...favTeams]
+    copyFavTeams[0].active = true
+    setFavTeams(copyFavTeams)
+  }, []);
 
   const handleChangeSelectbox = (event) => {
     setActualContent(event.target.value)
@@ -46,7 +56,7 @@ function DashboardPage({ options }) {
 
     obtainData()
 
-  },[actualContent])
+  },[sourceId])
 
   return (
     <div className='DashboardPage'>
@@ -76,11 +86,11 @@ function DashboardPage({ options }) {
               name={league.name}
               array={favLeagues}
             />
-          )) : favTeams.map(teams => (
+          )) : favTeams.map(team => (
             <SourceButton 
-              key={teams.id}
-              imageId={teams.id}
-              name={teams.name}
+              key={team.id}
+              imageId={team.id}
+              name={team.name}
               array={favTeams}
             />
           ))}
