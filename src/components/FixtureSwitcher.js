@@ -1,23 +1,11 @@
-import { useContext, useState } from 'react'
-import { ContentContext } from '../App'
+import { useContext } from 'react'
+import { ContentContext, FixtureContext } from '../App'
 import '../stylesheets/FixtureSwitcher.css'
 
 function FixtureSwitcher() {
 
   const { actualContent, setActualContent } = useContext(ContentContext)
-  const fixtureOptions = [
-    {
-      id: 1,
-      text: 'Upcoming',
-      active: true
-    }, 
-    {
-      id: 2,
-      text: 'Past Matches',
-      active: false
-    }
-  ]
-  const [fixtureData, setFixtureData] = useState(fixtureOptions)
+  const { fixtureData, setFixtureData } = useContext(FixtureContext)
 
   return (
     <section className='fixture-switcher-container'>

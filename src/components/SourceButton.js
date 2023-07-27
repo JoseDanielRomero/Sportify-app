@@ -27,6 +27,8 @@ function SourceButton({ name, imageId, array }) {
     } else {
       setFavTeams(copyArray)
     }
+
+    setSourceId(imageId)
   }
 
   const handleClassSource = () => {

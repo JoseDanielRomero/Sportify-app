@@ -1,7 +1,7 @@
 import '../stylesheets/DashboardPage.css'
 import logoIcon from '../images/logo.svg'
 import { useContext, useEffect, useState } from 'react'
-import { ContentContext, LeaguesContext, SourceIdContext, TeamsContext } from '../App'
+import { ContentContext, FixtureContext, LeaguesContext, SourceIdContext, TeamsContext } from '../App'
 import triangleLeft from '../images/triangle-left.svg'
 import triangleRight from '../images/triangle-right.svg'
 import axios from 'axios'
@@ -15,6 +15,7 @@ function DashboardPage({ options }) {
   const { sourceId, setSourceId } = useContext(SourceIdContext)
   const [database, setDatabase] = useState([])
   const { actualContent, setActualContent } = useContext(ContentContext)
+  const { fixtureData, setFixtureData } = useContext(FixtureContext)
 
   useEffect(() => {
     const copyFavLeagues = [...favLeagues]
@@ -28,10 +29,15 @@ function DashboardPage({ options }) {
 
   const handleChangeSelectbox = (event) => {
     setActualContent(event.target.value)
-    if (actualContent == 'league') {
-      setSourceId(favTeams[0].id)
+    const copyFavLeagues = [...favLeagues]
+    const copyFavTeams = [...favTeams]
+
+    if (actualContent == 'team') {
+      const findActive = copyFavLeagues.findIndex((element) => element.active === true)
+      setSourceId(favLeagues[findActive].id)
     } else {
-      setSourceId(favLeagues[0].id)
+      const findActive = copyFavTeams.findIndex((element) => element.active === true)
+      setSourceId(favTeams[findActive].id)
     }
   }
 
@@ -39,24 +45,29 @@ function DashboardPage({ options }) {
 
     const obtainData = async() => {
 
+      const findActive = fixtureData.findIndex((element) => element.active === true)
+      const actualFixture = fixtureData[findActive].param
+
       const config = {
         headers:{
-          'x-rapidapi-key': '0b102a95cfff7b15702b70425d0345a7',
+          'x-rapidapi-key': 'cfb97c8b7f111df47e8cca192220d0d6',
           'x-rapidapi-host': 'v3.football.api-sports.io'
         }
       };
 
-      const url = 'https://v3.football.api-sports.io/fixtures?' + actualContent + '=' + 39 + '&last=6';
+      const url = 'https://v3.football.api-sports.io/fixtures?' + actualContent + '=' + sourceId + '&' + actualFixture + '=6';
 
       const api = await axios.get(url, config)
 
-      setDatabase(api)
+      setDatabase(api.data.response)
 
     }
 
     obtainData()
 
-  },[sourceId])
+  },[sourceId, fixtureData])
+
+  console.log(database)
 
   return (
     <div className='DashboardPage'>

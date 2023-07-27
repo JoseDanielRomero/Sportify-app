@@ -6,11 +6,27 @@ export const ContentContext = createContext([])
 export const LeaguesContext = createContext([])
 export const TeamsContext = createContext([])
 export const SourceIdContext = createContext('')
+export const FixtureContext = createContext([])
 
 function App() {
   const options = [
     {value: 'league', text: 'LEAGUES'},
     {value: 'team', text: 'TEAMS'},
+  ]
+
+  const fixtureOptions = [
+    {
+      id: 1,
+      text: 'Upcoming',
+      param: 'next',
+      active: true
+    }, 
+    {
+      id: 2,
+      text: 'Past Matches',
+      param: 'last',
+      active: false
+    }
   ]
 
   const favoriteLeagues = [
@@ -48,9 +64,11 @@ function App() {
   const [favLeagues, setFavLeagues] = useState(favoriteLeagues);
   const [favTeams, setFavTeams] = useState(favoriteTeams);
   const [sourceId, setSourceId] = useState(favLeagues[0].id)
+  const [fixtureData, setFixtureData] = useState(fixtureOptions)
 
   return (
-    <SourceIdContext.Provider value={{ sourceId, setSourceId }} >
+    <FixtureContext.Provider value={{ fixtureData, setFixtureData }}>
+      <SourceIdContext.Provider value={{ sourceId, setSourceId }} >
       <LeaguesContext.Provider value={{ favLeagues, setFavLeagues }} >
         <TeamsContext.Provider value={{ favTeams, setFavTeams }} >
           <ContentContext.Provider value={{ actualContent, setActualContent }}>
@@ -62,8 +80,8 @@ function App() {
         </ContentContext.Provider>
         </TeamsContext.Provider>
       </LeaguesContext.Provider>
-    </SourceIdContext.Provider>
-      
+      </SourceIdContext.Provider>
+    </FixtureContext.Provider>
   );
 }
 
