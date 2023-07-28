@@ -1,0 +1,12 @@
+@media screen and (max-width: 480px) {
+
+    .navbar-container {
+        height: 8vh;
+        width: 80%;
+        background-color: #FFFFFF;
+        position:fixed; 
+        bottom: 3vh; 
+        z-index:999999
+    }
+
+}

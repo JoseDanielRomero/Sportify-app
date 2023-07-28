@@ -8,6 +8,7 @@ import axios from 'axios'
 import SourceButton from '../components/SourceButton'
 import FixtureSwitcher from '../components/FixtureSwitcher'
 import MatchArticle from '../components/MatchArticle'
+import Navbar from '../components/Navbar'
 
 function DashboardPage({ options }) {
 
@@ -70,7 +71,7 @@ function DashboardPage({ options }) {
 
   return (
     <div className='DashboardPage'>
-      <header className='header'>
+      <header className='header-dashboard'>
         <div className='logo-box'>
           <img className='logo-image' src={logoIcon}/>
           <h1 className='logo-text'>SPORTIFY</h1>
@@ -87,7 +88,7 @@ function DashboardPage({ options }) {
           <img className='triangle-for-button' src={triangleRight} />
         </div>
       </header>
-      <main>
+      <main className='main-dashboard'>
         <section className='source-button-container'>
           {actualContent == 'league' ? favLeagues.map(league => (
             <SourceButton 
@@ -123,6 +124,7 @@ function DashboardPage({ options }) {
             teamAwayPenalty={match.score.penalty.away}
           />
         ))}
+        <Navbar />
       </main>
       <footer>
       </footer>
