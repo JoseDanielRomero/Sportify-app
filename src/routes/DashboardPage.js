@@ -42,33 +42,31 @@ function DashboardPage({ options }) {
     }
   }
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   const obtainData = async() => {
+    const obtainData = async() => {
 
-  //     const findActive = fixtureData.findIndex((element) => element.active === true)
-  //     const actualFixture = fixtureData[findActive].param
+      const findActive = fixtureData.findIndex((element) => element.active === true)
+      const actualFixture = fixtureData[findActive].param
 
-  //     const config = {
-  //       headers:{
-  //         'x-rapidapi-key': 'cfb97c8b7f111df47e8cca192220d0d6',
-  //         'x-rapidapi-host': 'v3.football.api-sports.io'
-  //       }
-  //     };
+      const config = {
+        headers:{
+          'x-rapidapi-key': 'cfb97c8b7f111df47e8cca192220d0d6',
+          'x-rapidapi-host': 'v3.football.api-sports.io'
+        }
+      };
 
-  //     const url = 'https://v3.football.api-sports.io/fixtures?' + actualContent + '=' + sourceId + '&' + actualFixture + '=6';
+      const url = 'https://v3.football.api-sports.io/fixtures?' + actualContent + '=' + sourceId + '&' + actualFixture + '=6';
 
-  //     const api = await axios.get(url, config)
+      const api = await axios.get(url, config)
 
-  //     setDatabase(api.data.response)
+      setDatabase(api.data.response)
 
-  //   }
+    }
 
-  //   obtainData()
+    obtainData()
 
-  // },[sourceId, fixtureData])
-
-  // console.log(database)
+  },[sourceId, fixtureData])
 
   return (
     <div className='DashboardPage'>
@@ -108,8 +106,25 @@ function DashboardPage({ options }) {
           ))}
         </section>
         <FixtureSwitcher />
-        <MatchArticle />
+        {database.map(match => (
+          <MatchArticle 
+            key={match.fixture.id}
+            leagueLogo={match.league.logo}
+            leagueName={match.league.name}
+            leagueRound={match.league.round}
+            teamHomeName={match.teams.home.name}
+            teamHomeLogo={match.teams.home.logo}
+            teamHomeGoals={match.goals.home}
+            teamHomePenalty={match.score.penalty.home}
+            teamAwayName={match.teams.away.name}
+            teamAwayLogo={match.teams.away.logo}
+            teamAwayGoals={match.goals.away}
+            teamAwayPenalty={match.score.penalty.away}
+          />
+        ))}
       </main>
+      <footer>
+      </footer>
     </div>
   )
 }

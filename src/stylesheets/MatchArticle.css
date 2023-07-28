@@ -7,6 +7,7 @@
         flex-direction: column;
         align-items: stretch;
         justify-content: stretch;
+        margin-bottom: 4vh;
     }
 
     .match-teams-box {
@@ -28,12 +29,19 @@
         width: 45%;
     }
 
-    .match-home-team-topbox {
+    .match-team-topbox {
         height: 25%;
         width: 100%;
         display: flex;
         flex-direction: column;
+    }
+
+    .match-team-topbox.home {
         align-items: flex-start;
+    }
+
+    .match-team-topbox.away {
+        align-items: flex-end;
     }
 
     .match-league-image {
@@ -41,23 +49,30 @@
         height: 24px;
     }
 
-    .match-home-team-extrabox {
+    .match-team-extrabox {
         height: 20%;
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
         justify-content: center;
         margin-left: 2%;
     }
 
-    .match-home-team-penalty {
+    .match-team-extrabox.home {
+        align-items: flex-end;
+    }
+
+    .match-team-extrabox.away {
+        align-items: flex-start;
+    }
+
+    .match-team-penalty {
         margin: 0;
         color: #848181;
         font-size: .8rem;
     }
 
-    .match-home-team-result {
+    .match-team-result {
         height: 55%;
         width: 100%;
         display: flex;
@@ -66,17 +81,24 @@
         justify-content: space-between;
     }
 
-    .match-home-team-name {
+    .match-team-name {
         margin: 0;
         color: #322D2D;
         font-size: .9rem;
         width: 57%;
         overflow-wrap: break-word;
-        text-align: left;
         line-height: 1rem;
     }
 
-    .match-home-team-logo-box {
+    .match-team-name.home {
+        text-align: left;
+    }
+
+    .match-team-name.away {
+        text-align: right;
+    }
+
+    .match-team-logo-box {
         width: 25%;
         height: 100%;
         display: flex;
@@ -85,17 +107,24 @@
         justify-content: center;
     }
 
-    .match-home-team-logo {
+    .match-team-logo {
         object-fit: cover;
         width: 100%;
     }
 
-    .match-home-team-goals {
+    .match-team-goals {
         width: 15%;
         margin: 0;
         color: #322D2D;
         font-size: 1.5rem;
+    }
+
+    .match-team-goals.home {
         text-align: right;
+    }
+
+    .match-team-goals.away {
+        text-align: left;
     }
 
     .match-details-box {
