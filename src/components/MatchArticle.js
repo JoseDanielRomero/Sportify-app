@@ -1,9 +1,16 @@
 import '../stylesheets/MatchArticle.css'
 
-function MatchArticle({ leagueLogo, leagueName, leagueRound, teamHomeName, teamHomeLogo, teamHomeGoals, teamHomePenalty, teamAwayName, teamAwayLogo, teamAwayGoals, teamAwayPenalty }) {
+function MatchArticle({ datetime, leagueLogo, leagueName, leagueRound, teamHomeName, teamHomeLogo, teamHomeGoals, teamHomePenalty, teamAwayName, teamAwayLogo, teamAwayGoals, teamAwayPenalty }) {
 
   const formatHomeName = teamHomeName.toUpperCase()
   const formatAwayName = teamAwayName.toUpperCase()
+
+  var fecha;
+  fecha = new Date(datetime)
+  const dateString = fecha.toDateString()
+  const matchDate = dateString.slice(4, 15)
+  const timeString = fecha.toTimeString()
+  const matchTime = timeString.slice(0, 5)
 
   return (
     <article className='match-container'>
@@ -45,8 +52,8 @@ function MatchArticle({ leagueLogo, leagueName, leagueRound, teamHomeName, teamH
           <p className='match-details-subtitle'>{leagueRound}</p>
         </div>
         <div className='match-details-box-datetime'>
-          <p className='match-details-subtitle'>05/08/2023</p>
-          <p className='match-details-subtitle'>20:00 PM</p>
+          <p className='match-details-subtitle'>{matchDate}</p>
+          <p className='match-details-subtitle'>{matchTime}</p>
         </div>
       </section>
     </article>

@@ -109,6 +109,7 @@ function DashboardPage({ options }) {
         {database.map(match => (
           <MatchArticle 
             key={match.fixture.id}
+            datetime={match.fixture.date}
             leagueLogo={match.league.logo}
             leagueName={match.league.name}
             leagueRound={match.league.round}
