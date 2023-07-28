@@ -19,6 +19,7 @@
         justify-content: center;
         border: 1.5px solid #EEEDED;
         background-color: #FAFAFA;
+        padding: 0;
     }
 
     .source-button-box-image.selected {

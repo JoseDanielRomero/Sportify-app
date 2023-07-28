@@ -13,13 +13,96 @@
         height: 70%;
         width: 100%;
         background-image: -webkit-linear-gradient(-20deg, #EEEDED 50%, #E3E3E3 50%);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 2.5%;
+        padding-bottom: 5%;
+    }
+
+    .match-home-team-container, .match-away-team-container {
+        height: 100%;
+        width: 45%;
+    }
+
+    .match-home-team-topbox {
+        height: 25%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .match-league-image {
+        object-fit: cover;
+        height: 24px;
+    }
+
+    .match-home-team-extrabox {
+        height: 20%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        margin-left: 2%;
+    }
+
+    .match-home-team-penalty {
+        margin: 0;
+        color: #848181;
+        font-size: .8rem;
+    }
+
+    .match-home-team-result {
+        height: 55%;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .match-home-team-name {
+        margin: 0;
+        color: #322D2D;
+        font-size: .9rem;
+        width: 57%;
+        overflow-wrap: break-word;
+        text-align: left;
+        line-height: 1rem;
+    }
+
+    .match-home-team-logo-box {
+        width: 25%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: center;
+    }
+
+    .match-home-team-logo {
+        object-fit: cover;
+        width: 100%;
+    }
+
+    .match-home-team-goals {
+        width: 15%;
+        margin: 0;
+        color: #322D2D;
+        font-size: 1.5rem;
+        text-align: right;
     }
 
     .match-details-box {
         height: 30%;
         width: 100%;
         background-color: #1E1E1E;
-        padding: 0 5%;
+        padding: 0 3%;
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -46,11 +129,6 @@
         color: #D6D5D5;
         font-size: .9rem;
     }
-
-    .date {
-        font-size: .9rem;
-    }
-
     
 
 }
