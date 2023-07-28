@@ -7,6 +7,7 @@ import triangleRight from '../images/triangle-right.svg'
 import axios from 'axios'
 import SourceButton from '../components/SourceButton'
 import FixtureSwitcher from '../components/FixtureSwitcher'
+import MatchArticle from '../components/MatchArticle'
 
 function DashboardPage({ options }) {
 
@@ -107,6 +108,7 @@ function DashboardPage({ options }) {
           ))}
         </section>
         <FixtureSwitcher />
+        <MatchArticle />
       </main>
     </div>
   )

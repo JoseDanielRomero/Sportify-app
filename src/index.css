@@ -3,12 +3,12 @@
     -webkit-box-sizing: border-box; 
     box-sizing: border-box;
     font-family: 'Manrope', sans-serif;
-    background-color: #FAFAFA;
   }
   
   html, body {
     padding: 0;
     margin: 0;
+    background-color: #FAFAFA;
   }
   
   input::-webkit-outer-spin-button,

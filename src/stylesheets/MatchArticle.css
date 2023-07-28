@@ -1,0 +1,56 @@
+@media screen and (max-width: 480px) {
+
+    .match-container {
+        height: 26vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: stretch;
+    }
+
+    .match-teams-box {
+        height: 70%;
+        width: 100%;
+        background-image: -webkit-linear-gradient(-20deg, #EEEDED 50%, #E3E3E3 50%);
+    }
+
+    .match-details-box {
+        height: 30%;
+        width: 100%;
+        background-color: #1E1E1E;
+        padding: 0 5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .match-details-box-competition {
+        width: 70%;
+    }
+
+    .match-details-box-datetime {
+        text-align: right;
+        width: 30%;
+    }
+
+    .match-details-title {
+        margin: 0;
+        color: white;
+        font-size: 1rem;
+    }
+
+    .match-details-subtitle {
+        margin: 0;
+        color: #D6D5D5;
+        font-size: .9rem;
+    }
+
+    .date {
+        font-size: .9rem;
+    }
+
+    
+
+}
