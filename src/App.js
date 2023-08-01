@@ -8,6 +8,7 @@ export const LeaguesContext = createContext([])
 export const TeamsContext = createContext([])
 export const SourceIdContext = createContext('')
 export const FixtureContext = createContext([])
+export const MatchInfoContext = createContext([]) 
 
 function App() {
   const options = [
@@ -26,6 +27,24 @@ function App() {
       id: 2,
       text: 'Past Matches',
       param: 'last',
+      active: false
+    }
+  ]
+
+  const matchInfoOptions = [
+    {
+      id: 1,
+      text: 'Stats',
+      active: true
+    }, 
+    {
+      id: 2,
+      text: 'Playing XI',
+      active: false
+    }, 
+    {
+      id: 3,
+      text: 'Details',
       active: false
     }
   ]
@@ -66,24 +85,27 @@ function App() {
   const [favTeams, setFavTeams] = useState(favoriteTeams);
   const [sourceId, setSourceId] = useState(favLeagues[0].id)
   const [fixtureData, setFixtureData] = useState(fixtureOptions)
+  const [matchData, setMatchData] = useState(matchInfoOptions)
 
   return (
-    <FixtureContext.Provider value={{ fixtureData, setFixtureData }}>
-      <SourceIdContext.Provider value={{ sourceId, setSourceId }} >
-      <LeaguesContext.Provider value={{ favLeagues, setFavLeagues }} >
-        <TeamsContext.Provider value={{ favTeams, setFavTeams }} >
-          <ContentContext.Provider value={{ actualContent, setActualContent }}>
-            <HashRouter>
-              <Routes>
-                <Route path='/' element={<DashboardPage options={options} />} />
-                <Route path='/match/:idMatch' element={<MatchPage />} />
-              </Routes>
-            </HashRouter>
-        </ContentContext.Provider>
-        </TeamsContext.Provider>
-      </LeaguesContext.Provider>
-      </SourceIdContext.Provider>
-    </FixtureContext.Provider>
+    <MatchInfoContext.Provider value={{ matchData, setMatchData }} >
+      <FixtureContext.Provider value={{ fixtureData, setFixtureData }}>
+        <SourceIdContext.Provider value={{ sourceId, setSourceId }} >
+          <LeaguesContext.Provider value={{ favLeagues, setFavLeagues }} >
+            <TeamsContext.Provider value={{ favTeams, setFavTeams }} >
+              <ContentContext.Provider value={{ actualContent, setActualContent }}>
+                <HashRouter>
+                  <Routes>
+                    <Route path='/' element={<DashboardPage options={options} />} />
+                    <Route path='/match/:idMatch' element={<MatchPage />} />
+                  </Routes>
+                </HashRouter>
+              </ContentContext.Provider>
+            </TeamsContext.Provider>
+          </LeaguesContext.Provider>
+        </SourceIdContext.Provider>
+      </FixtureContext.Provider>
+    </MatchInfoContext.Provider>
   );
 }
 

@@ -1,0 +1,32 @@
+@media screen and (max-width: 480px) {
+
+    .main-match-toogle {
+        height: 7vh;
+        width: 100%;
+        padding: 5% 5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .main-match-switcher-box {
+        height: 7vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: 600;
+        border: none;
+        color: #5B5757;
+        padding: 0;
+    }
+
+    .main-match-switcher-box.selected {
+        padding-top: 2px;
+        border-bottom: 2px solid #FF5050;
+        color: black;
+    }
+
+}

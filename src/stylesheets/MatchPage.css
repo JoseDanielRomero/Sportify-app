@@ -1,9 +1,10 @@
 @media screen and (max-width: 480px) {
 
     .MatchPage {
-        height: 100vh;
+        height: auto;
         width: 100vw;
         padding: 5% 5%;
+        padding-bottom: 10%;
     }
 
     .MatchPageLoading {
@@ -176,6 +177,12 @@
         overflow-wrap: break-word;
         line-height: 1rem;
         text-align: center;
+    }
+
+    .main-match {
+        height: 60vh;
+        width: 100%;
+        background-color: #FFF;
     }
 
 }

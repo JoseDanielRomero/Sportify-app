@@ -3,6 +3,8 @@ import backIcon from '../images/back.svg'
 import { NavLink, useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+import MatchInfoSwitcher from '../components/MatchInfoSwitcher'
+import MatchInfoResult from '../components/MatchInfoResult'
 
 function MatchPage() {
 
@@ -114,8 +116,10 @@ function MatchPage() {
             </div>
           </section>
         </header>
-        
-        
+        <main className='main-match'>
+          <MatchInfoSwitcher />
+          <MatchInfoResult />
+        </main>
       </div>
     )
   } else {
