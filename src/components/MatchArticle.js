@@ -12,6 +12,16 @@ function MatchArticle({ datetime, leagueLogo, leagueName, leagueRound, teamHomeN
   const timeString = fecha.toTimeString()
   const matchTime = timeString.slice(0, 5)
 
+  let penaltyHome;
+  let penaltyAway;
+  if (teamHomePenalty != null && teamAwayPenalty != null) {
+    penaltyHome = '(' + teamHomePenalty + ')'
+    penaltyAway = '(' + teamAwayPenalty + ')'
+  } else {
+    penaltyHome = ''
+    penaltyAway = ''
+  }
+
   return (
     <article className='match-container'>
       <section className='match-teams-box'>
@@ -20,7 +30,7 @@ function MatchArticle({ datetime, leagueLogo, leagueName, leagueRound, teamHomeN
             <img className='match-league-image' src={leagueLogo} />
           </div>
           <div className='match-team-extrabox home'>
-            <p className='match-team-penalty'>{teamHomePenalty}</p>
+            <p className='match-team-penalty'>{penaltyHome}</p>
           </div>
           <div className='match-team-result'>
             <p className='match-team-name home'>{formatHomeName}</p>
@@ -35,7 +45,7 @@ function MatchArticle({ datetime, leagueLogo, leagueName, leagueRound, teamHomeN
             
           </div>
           <div className='match-team-extrabox away'>
-            <p className='match-team-penalty'>{teamAwayPenalty}</p>
+            <p className='match-team-penalty'>{penaltyAway}</p>
           </div>
           <div className='match-team-result'>
             <p className='match-team-goals away'>{teamAwayGoals}</p>
