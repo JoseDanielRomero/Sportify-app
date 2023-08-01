@@ -1,14 +1,18 @@
 import '../stylesheets/MatchPage.css'
 import backIcon from '../images/back.svg'
 import { NavLink, useParams } from 'react-router-dom'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import MatchInfoSwitcher from '../components/MatchInfoSwitcher'
-import MatchInfoResult from '../components/MatchInfoResult'
+import MatchInfoStats from '../components/MatchInfoStats'
+import { MatchInfoContext } from '../App'
+import MatchInfoPlayingXI from '../components/MatchInfoPlayingXI'
+import MatchInfoDetails from '../components/MatchInfoDetails'
 
 function MatchPage() {
 
   const { idMatch } = useParams()
+  const { matchData } = useContext(MatchInfoContext)
   const [matchDatabase, setMatchDatabase] = useState([])
   
   useEffect(() => {
@@ -72,6 +76,9 @@ function MatchPage() {
       penaltiesResult = ''
     }
 
+    const findActive = matchData.findIndex((element) => element.active == true)
+    const actualMatchToogle = matchData[findActive].text
+
     return (
       <div className='MatchPage'>
         <nav className='nav-match'>
@@ -118,7 +125,9 @@ function MatchPage() {
         </header>
         <main className='main-match'>
           <MatchInfoSwitcher />
-          <MatchInfoResult />
+          {actualMatchToogle == 'Stats' && <MatchInfoStats />}
+          {actualMatchToogle == 'Playing XI' && <MatchInfoPlayingXI />}
+          {actualMatchToogle == 'Details' && <MatchInfoDetails />}
         </main>
       </div>
     )

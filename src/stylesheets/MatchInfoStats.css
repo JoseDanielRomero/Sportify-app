@@ -1,0 +1,10 @@
+@media screen and (max-width: 480px) {
+
+    .main-match-stats-container {
+        height: 53vh;
+        width: 100%;
+        padding: 5% 5%;
+        border-top: 7px solid #FAFAFA;
+    }
+
+}
