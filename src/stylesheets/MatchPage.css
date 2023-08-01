@@ -3,7 +3,70 @@
     .MatchPage {
         height: 100vh;
         width: 100vw;
-        padding: 0 5%;
+        padding: 5% 5%;
+    }
+
+    .MatchPageLoading {
+        height: 100vh;
+        width: 100vw;
+        padding: 5% 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .loader {
+        border: 4px solid rgba(0, 0, 0, 0.1);
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border-left-color: #09f;
+        animation: spin 1s ease infinite;
+    }
+
+    @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+      
+        100% {
+          transform: rotate(360deg);
+        }
+    }
+
+    .nav-match {
+        height: 4vh;
+        width: 100%;
+    }
+
+    .nav-match-icon {
+        height: 100%;
+    }
+
+    .header-match {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        margin: 2vh 0;
+    }
+
+    .match-round {
+        font-family: Bebas Neue;
+        font-size: 1.5rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0;
+        margin-bottom: .7vh;
+    }
+
+    .match-datetime {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0;
     }
 
 }

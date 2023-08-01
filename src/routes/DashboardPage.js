@@ -92,7 +92,7 @@ function DashboardPage({ options }) {
       <main className='main-dashboard'>
         <section className='source-button-container'>
           {actualContent == 'league' ? favLeagues.map(league => (
-              <SourceButton 
+            <SourceButton 
               key={league.id}
               imageId={league.id}
               name={league.name}
