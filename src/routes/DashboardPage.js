@@ -9,6 +9,7 @@ import SourceButton from '../components/SourceButton'
 import FixtureSwitcher from '../components/FixtureSwitcher'
 import MatchArticle from '../components/MatchArticle'
 import Navbar from '../components/Navbar'
+import { NavLink } from 'react-router-dom'
 
 function DashboardPage({ options }) {
 
@@ -91,7 +92,7 @@ function DashboardPage({ options }) {
       <main className='main-dashboard'>
         <section className='source-button-container'>
           {actualContent == 'league' ? favLeagues.map(league => (
-            <SourceButton 
+              <SourceButton 
               key={league.id}
               imageId={league.id}
               name={league.name}
@@ -107,9 +108,11 @@ function DashboardPage({ options }) {
           ))}
         </section>
         <FixtureSwitcher />
-        {database.map(match => (
-          <MatchArticle 
-            key={match.fixture.id}
+        {database.map(match => {
+          const linkTo = '/match/' + match.fixture.id
+          return (
+          <NavLink to={linkTo} key={match.fixture.id}>
+            <MatchArticle 
             datetime={match.fixture.date}
             leagueLogo={match.league.logo}
             leagueName={match.league.name}
@@ -122,8 +125,9 @@ function DashboardPage({ options }) {
             teamAwayLogo={match.teams.away.logo}
             teamAwayGoals={match.goals.away}
             teamAwayPenalty={match.score.penalty.away}
-          />
-        ))}
+            />
+          </NavLink>
+        )})}
         <Navbar 
           screen='dashboard'
         />

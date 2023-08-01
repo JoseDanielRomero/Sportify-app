@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import DashboardPage from './routes/DashboardPage';
+import MatchPage from './routes/MatchPage';
 
 export const ContentContext = createContext([])
 export const LeaguesContext = createContext([])
@@ -75,6 +76,7 @@ function App() {
             <HashRouter>
               <Routes>
                 <Route path='/' element={<DashboardPage options={options} />} />
+                <Route path='/match/:idMatch' element={<MatchPage />} />
               </Routes>
             </HashRouter>
         </ContentContext.Provider>

@@ -20,6 +20,7 @@
         flex-direction: row;
         align-items: stretch;
         justify-content: space-around;
+        border: 2px solid #FFFFFF;
     }
 
     .triangle-for-navbar {
@@ -34,7 +35,7 @@
     }
 
     .nav-icon {
-        height: 55%;
+        height: 60%;
         padding: 1px 0;
     }
 
