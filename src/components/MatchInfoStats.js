@@ -2,9 +2,9 @@ import '../stylesheets/MatchInfoStats.css'
 
 function MatchInfoStats() {
   return (
-    <div className='main-match-stats-container'>
+    <article className='main-match-stats-container'>
 
-    </div>
+    </article>
   )
 }
 

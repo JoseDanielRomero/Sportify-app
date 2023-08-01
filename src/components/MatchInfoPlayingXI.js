@@ -2,9 +2,9 @@ import '../stylesheets/MatchInfoPlayingXI.css'
 
 function MatchInfoPlayingXI() {
   return (
-    <div className='main-match-playingXI-container'>
+    <article className='main-match-playingXI-container'>
 
-    </div>
+    </article>
   )
 }
 

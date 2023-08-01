@@ -127,7 +127,12 @@ function MatchPage() {
           <MatchInfoSwitcher />
           {actualMatchToogle == 'Stats' && <MatchInfoStats />}
           {actualMatchToogle == 'Playing XI' && <MatchInfoPlayingXI />}
-          {actualMatchToogle == 'Details' && <MatchInfoDetails />}
+          {actualMatchToogle == 'Details' && 
+          <MatchInfoDetails  
+            refereeName={matchDatabase[0].fixture.referee}
+            stadiumName={matchDatabase[0].fixture.venue.name}
+            cityName={matchDatabase[0].fixture.venue.city}
+          />}
         </main>
       </div>
     )
