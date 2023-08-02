@@ -44,31 +44,31 @@ function DashboardPage({ options }) {
     }
   }
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   const obtainData = async() => {
+    const obtainData = async() => {
 
-  //     const findActive = fixtureData.findIndex((element) => element.active === true)
-  //     const actualFixture = fixtureData[findActive].param
+      const findActive = fixtureData.findIndex((element) => element.active === true)
+      const actualFixture = fixtureData[findActive].param
 
-  //     const config = {
-  //       headers:{
-  //         'x-rapidapi-key': 'cfb97c8b7f111df47e8cca192220d0d6',
-  //         'x-rapidapi-host': 'v3.football.api-sports.io'
-  //       }
-  //     };
+      const config = {
+        headers:{
+          'x-rapidapi-key': 'cfb97c8b7f111df47e8cca192220d0d6',
+          'x-rapidapi-host': 'v3.football.api-sports.io'
+        }
+      };
 
-  //     const url = 'https://v3.football.api-sports.io/fixtures?' + actualContent + '=' + sourceId + '&' + actualFixture + '=6';
+      const url = 'https://v3.football.api-sports.io/fixtures?' + actualContent + '=' + sourceId + '&' + actualFixture + '=6';
 
-  //     const api = await axios.get(url, config)
+      const api = await axios.get(url, config)
 
-  //     setDatabase(api.data.response)
+      setDatabase(api.data.response)
 
-  //   }
+    }
 
-  //   obtainData()
+    obtainData()
 
-  // },[sourceId, fixtureData])
+  },[sourceId, fixtureData])
 
   return (
     <div className='DashboardPage'>

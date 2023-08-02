@@ -3,7 +3,7 @@
     .main-match-details-container {
         height: 53vh;
         width: 100%;
-        padding: 7% 5%;
+        padding: 5% 5%;
         border-top: 7px solid #FAFAFA;
         display: flex;
         flex-direction: column;
@@ -13,7 +13,7 @@
 
     .main-match-details-title {
         font-family: Bebas Neue;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         font-style: normal;
         font-weight: 700;
         line-height: normal;
@@ -26,7 +26,9 @@
         color: #150000;
         font-size: .9rem;
         font-weight: 500;
-        margin-bottom: 5vh;
+        margin-bottom: 4vh;
+        line-height: 1rem;
+        text-align: center;
     }
 
 }

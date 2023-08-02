@@ -126,7 +126,10 @@ function MatchPage() {
         <main className='main-match'>
           <MatchInfoSwitcher />
           {actualMatchToogle == 'Stats' && <MatchInfoStats />}
-          {actualMatchToogle == 'Playing XI' && <MatchInfoPlayingXI />}
+          {actualMatchToogle == 'Playing XI' && 
+          <MatchInfoPlayingXI 
+            fixtureId = {idMatch}
+          />}
           {actualMatchToogle == 'Details' && 
           <MatchInfoDetails  
             refereeName={matchDatabase[0].fixture.referee}
