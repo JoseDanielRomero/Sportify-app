@@ -6,30 +6,30 @@ function MatchInfoPlayingXI({ fixtureId }) {
 
   const [lineupDatabase, setLineupDatabase] = useState([])
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    const obtainLineupData = async() => {
+  //   const obtainLineupData = async() => {
 
-      const url = 'https://v3.football.api-sports.io/fixtures/lineups?fixture=' + fixtureId;
+  //     const url = 'https://v3.football.api-sports.io/fixtures/lineups?fixture=' + fixtureId;
 
-      const config = {
-        headers:{
-          'x-rapidapi-key': 'cfb97c8b7f111df47e8cca192220d0d6',
-          'x-rapidapi-host': 'v3.football.api-sports.io'
-        }
-      };
+  //     const config = {
+  //       headers:{
+  //         'x-rapidapi-key': 'cfb97c8b7f111df47e8cca192220d0d6',
+  //         'x-rapidapi-host': 'v3.football.api-sports.io'
+  //       }
+  //     };
 
-      const api = await axios.get(url, config)
+  //     const api = await axios.get(url, config)
 
-      setLineupDatabase(api.data.response)
+  //     setLineupDatabase(api.data.response)
 
-    }
+  //   }
 
-    obtainLineupData()
+  //   obtainLineupData()
 
-  },[])
+  // },[])
 
-  console.log(lineupDatabase)
+  // console.log(lineupDatabase)
 
   if (lineupDatabase.length > 0) {
     return (
@@ -43,7 +43,7 @@ function MatchInfoPlayingXI({ fixtureId }) {
               <h5 className='main-lineup-team-section-name'>STARTING XI</h5>
             </div>
             {lineupDatabase[0].startXI.map(players => (
-              <div className='main-lineup-team-player-box'>
+              <div className='main-lineup-team-player-box' key={players.player.id}>
                 <p className='main-lineup-team-player-number'>{players.player.number}</p>
                 <p className='main-lineup-team-player-name'>{players.player.name}</p>
               </div>
@@ -54,7 +54,7 @@ function MatchInfoPlayingXI({ fixtureId }) {
               <h5 className='main-lineup-team-section-name'>SUBSTITUTES</h5>
             </div>
             {lineupDatabase[0].substitutes.map(players => (
-              <div className='main-lineup-team-player-box'>
+              <div className='main-lineup-team-player-box' key={players.player.id}>
                 <p className='main-lineup-team-player-number'>{players.player.number}</p>
                 <p className='main-lineup-team-player-name'>{players.player.name}</p>
               </div>
@@ -71,7 +71,7 @@ function MatchInfoPlayingXI({ fixtureId }) {
               <h5 className='main-lineup-team-section-name'>STARTING XI</h5>
             </div>
             {lineupDatabase[1].startXI.map(players => (
-              <div className='main-lineup-team-player-box'>
+              <div className='main-lineup-team-player-box' key={players.player.id}>
                 <p className='main-lineup-team-player-number'>{players.player.number}</p>
                 <p className='main-lineup-team-player-name'>{players.player.name}</p>
               </div>
@@ -82,7 +82,7 @@ function MatchInfoPlayingXI({ fixtureId }) {
               <h5 className='main-lineup-team-section-name'>SUBSTITUTES</h5>
             </div>
             {lineupDatabase[1].substitutes.map(players => (
-              <div className='main-lineup-team-player-box'>
+              <div className='main-lineup-team-player-box' key={players.player.id}>
                 <p className='main-lineup-team-player-number'>{players.player.number}</p>
                 <p className='main-lineup-team-player-name'>{players.player.name}</p>
               </div>

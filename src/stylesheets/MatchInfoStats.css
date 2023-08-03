@@ -5,6 +5,37 @@
         width: 100%;
         padding: 5% 5%;
         border-top: 7px solid #FAFAFA;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        overflow: scroll;
+    }
+
+    .main-match-stats-title {
+        font-family: Bebas Neue;
+        font-size: 1.3rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        margin: 0;
+        margin-bottom: 1vh;
+    }
+
+    .main-match-stats-result-container {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: stretch;
+        justify-content: stretch;
+    }
+
+    .main-match-stats-result-box {
+        width: 50%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: stretch;
     }
 
 }

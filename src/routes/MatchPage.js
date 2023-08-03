@@ -125,7 +125,10 @@ function MatchPage() {
         </header>
         <main className='main-match'>
           <MatchInfoSwitcher />
-          {actualMatchToogle == 'Stats' && <MatchInfoStats />}
+          {actualMatchToogle == 'Stats' && 
+          <MatchInfoStats 
+            fixtureId = {idMatch}
+          />}
           {actualMatchToogle == 'Playing XI' && 
           <MatchInfoPlayingXI 
             fixtureId = {idMatch}
