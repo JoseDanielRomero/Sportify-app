@@ -6,30 +6,30 @@ function MatchInfoPlayingXI({ fixtureId }) {
 
   const [lineupDatabase, setLineupDatabase] = useState([])
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   const obtainLineupData = async() => {
+    const obtainLineupData = async() => {
 
-  //     const url = 'https://v3.football.api-sports.io/fixtures/lineups?fixture=' + fixtureId;
+      const url = 'https://v3.football.api-sports.io/fixtures/lineups?fixture=' + fixtureId;
 
-  //     const config = {
-  //       headers:{
-  //         'x-rapidapi-key': 'cfb97c8b7f111df47e8cca192220d0d6',
-  //         'x-rapidapi-host': 'v3.football.api-sports.io'
-  //       }
-  //     };
+      const config = {
+        headers:{
+          'x-rapidapi-key': 'cfb97c8b7f111df47e8cca192220d0d6',
+          'x-rapidapi-host': 'v3.football.api-sports.io'
+        }
+      };
 
-  //     const api = await axios.get(url, config)
+      const api = await axios.get(url, config)
 
-  //     setLineupDatabase(api.data.response)
+      setLineupDatabase(api.data.response)
 
-  //   }
+    }
 
-  //   obtainLineupData()
+    obtainLineupData()
 
-  // },[])
+  },[])
 
-  // console.log(lineupDatabase)
+  console.log(lineupDatabase)
 
   if (lineupDatabase.length > 0) {
     return (
@@ -94,12 +94,9 @@ function MatchInfoPlayingXI({ fixtureId }) {
   } else {
     return (
       <article className='main-lineup-playingXI-container empty'>
-        <p className='main-match-details-result'>Lineups to be announced.</p>
       </article>
     )
   }
-
-  
 }
 
 export default MatchInfoPlayingXI;
