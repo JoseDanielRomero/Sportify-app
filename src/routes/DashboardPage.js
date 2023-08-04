@@ -20,16 +20,6 @@ function DashboardPage({ options }) {
   const { actualContent, setActualContent } = useContext(ContentContext)
   const { fixtureData, setFixtureData } = useContext(FixtureContext)
 
-  useEffect(() => {
-    const copyFavLeagues = [...favLeagues]
-    copyFavLeagues[0].active = true
-    setFavLeagues(copyFavLeagues)
-
-    const copyFavTeams = [...favTeams]
-    copyFavTeams[0].active = true
-    setFavTeams(copyFavTeams)
-  }, []);
-
   const handleChangeSelectbox = (event) => {
     setActualContent(event.target.value)
     const copyFavLeagues = [...favLeagues]

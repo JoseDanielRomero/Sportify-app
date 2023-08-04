@@ -53,7 +53,7 @@ function App() {
     {
       id: '242',
       name: 'LigaPro',
-      active: false
+      active: true
     }, 
     {
       id: '140',
@@ -66,7 +66,7 @@ function App() {
     {
       id: '451',
       name: 'Boca',
-      active: false
+      active: true
     }, 
     {
       id: '1152',
