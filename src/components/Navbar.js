@@ -2,8 +2,8 @@ import '../stylesheets/Navbar.css'
 import triangleLeft from '../images/triangle-navbar-left.svg'
 import triangleRight from '../images/triangle-navbar-right.svg'
 import homeIcon from '../images/home.png'
-import newsIcon from '../images/newspaper.png'
-import favIcon from '../images/favourite.png'
+import leagueIcon from '../images/league.png'
+import teamIcon from '../images/team.png'
 import userIcon from '../images/user.png'
 import { NavLink } from 'react-router-dom';
 
@@ -25,10 +25,10 @@ function Navbar({ screen }) {
           <img src={homeIcon} className={handleClassIcon('dashboard')}/>
         </NavLink>
         <NavLink to='/' className='navicon-container'>
-          <img src={newsIcon} className={handleClassIcon('news')}/>
+          <img src={leagueIcon} className={handleClassIcon('leagues')}/>
         </NavLink >
         <NavLink to='/' className='navicon-container'>
-          <img src={favIcon} className={handleClassIcon('favourite')}/>
+          <img src={teamIcon} className={handleClassIcon('teams')}/>
         </NavLink >
         <NavLink to='/' className='navicon-container'>
           <img src={userIcon} className={handleClassIcon('user')}/>
