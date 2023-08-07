@@ -3,6 +3,7 @@ import { HashRouter, Route, Routes } from 'react-router-dom';
 import DashboardPage from './routes/DashboardPage';
 import MatchPage from './routes/MatchPage';
 import OnboardPage from './routes/OnboardPage';
+import RegisterPage from './routes/RegisterPage';
 
 export const ContentContext = createContext([])
 export const LeaguesContext = createContext([])
@@ -100,6 +101,7 @@ function App() {
                     <Route path='/' element={<DashboardPage options={options} />} />
                     <Route path='/match/:idMatch' element={<MatchPage />} />
                     <Route path='/onboard' element={<OnboardPage />} />
+                    <Route path='/register' element={<RegisterPage />} />
                   </Routes>
                 </HashRouter>
               </ContentContext.Provider>

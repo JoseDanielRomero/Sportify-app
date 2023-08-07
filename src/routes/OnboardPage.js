@@ -26,7 +26,7 @@ function OnboardPage() {
           <h2 className='main-slogan-text animate'>KEEP AN EYE<br />ON THE STADIUM</h2>
         </div>
         
-        <Link to='/' className='button-container'>
+        <Link to='/register' className='button-container'>
           <img src={triangleRight} className='triangle-for-button'/>
           <div className='button-box red'>
             <p className='button-text white'>LOGIN</p>
