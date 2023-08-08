@@ -26,14 +26,14 @@ function OnboardPage() {
           <h2 className='main-slogan-text animate'>KEEP AN EYE<br />ON THE STADIUM</h2>
         </div>
         
-        <Link to='/register' className='button-container'>
+        <Link to='/login' className='button-container'>
           <img src={triangleRight} className='triangle-for-button'/>
           <div className='button-box red'>
             <p className='button-text white'>LOGIN</p>
           </div>
           <img src={triangleLeft} className='triangle-for-button'/>
         </Link>
-        <Link to='/' className='button-container'>
+        <Link to='/register' className='button-container'>
           <img src={triangleGrayLeft} className='triangle-for-button'/>
           <div className='button-box gray'>
             <p className='button-text black'>CREATE ACCOUNT</p>

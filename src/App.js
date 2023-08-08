@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import DashboardPage from './routes/DashboardPage';
+import LoginPage from './routes/LoginPage';
 import MatchPage from './routes/MatchPage';
 import OnboardPage from './routes/OnboardPage';
 import RegisterPage from './routes/RegisterPage';
@@ -102,6 +103,7 @@ function App() {
                     <Route path='/match/:idMatch' element={<MatchPage />} />
                     <Route path='/onboard' element={<OnboardPage />} />
                     <Route path='/register' element={<RegisterPage />} />
+                    <Route path='/login' element={<LoginPage />} />
                   </Routes>
                 </HashRouter>
               </ContentContext.Provider>

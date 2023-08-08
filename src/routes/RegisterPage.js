@@ -5,15 +5,28 @@ import triangleLeft from '../images/triangle-black-right.svg'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { Navigate } from 'react-router-dom'
 import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function RegisterPage() {
 
 	const [isCreated, setIsCreated] = useState(false)
 
 	const handleSubmitForm = (values, {resetForm}) => {
-		console.log(values)
-		resetForm({ values: '' })
-		setIsCreated(true)
+
+    const usersList = JSON.parse(localStorage.getItem('users')) || []
+    
+    const isUserRegistered = usersList.find(user => user.email === values.email)
+
+    if (isUserRegistered) {
+      notify()
+    } else {
+      usersList.push(values)
+      localStorage.setItem('users', JSON.stringify(usersList))
+      resetForm({ values: '' })
+      setIsCreated(true)
+    }
+
 	}
 
 	const handleValidateForm = (values) => {
@@ -23,6 +36,8 @@ function RegisterPage() {
 			return errors
 		}
 	}
+
+  const notify = () => toast('The user is already registered.');
 
   if (isCreated == false) {
 		return (
@@ -34,7 +49,7 @@ function RegisterPage() {
 					</div>
 					<div className='header-register-text-box'>
 						<h3 className='header-register-title'>CREATE YOUR SPORTIFY ID</h3>
-						<p className='header-register-subtitle'>Get news,game updates highlights and more info on your favorite teams</p>
+						<p className='header-register-subtitle'>Get news, game updates, highlights and more info on your favorite teams</p>
 					</div>
 					<h2 className='header-register-big-title'>JOIN</h2>
 				</header>
@@ -66,6 +81,20 @@ function RegisterPage() {
 							<p className='main-register-text'>
 								By register you are consenting that your personal information will be collected, stored, and processed in the United States and the European Union on behalf of Sporify Properties, Inc.
 							</p>
+              <div>
+                <button onClick={notify}>Notify!</button>
+                <ToastContainer
+                  position="bottom-center"
+                  autoClose={5000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  theme="light"
+                />
+              </div>
 						</Form>
 					</Formik>
 				</main>
@@ -73,7 +102,7 @@ function RegisterPage() {
 		)
 	} else {
 		return (
-			<Navigate to="/onboard" />
+			<Navigate to="/login" />
 		)
 	}
 }
