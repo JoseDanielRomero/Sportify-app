@@ -79,6 +79,45 @@
         flex-direction: column;
         align-items: stretch;
         justify-content: flex-start;
+        padding: 5% 5%;
+    }
+
+    .form-input {
+        background-color: #F4F4F4;
+        height: 6vh;
+        width: 100%;
+        border: none;
+        margin-bottom: 2vh;
+        padding: 0 4%;
+        outline: none;
+        font-size: .9rem;
+    }
+
+    .form-input::placeholder {
+        color: #A8A8A8;
+    }
+
+    .form-button-container {
+        height: 6.5vh;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        margin: 3vh 0;
+    }
+
+    .button-box.black {
+        background-color: #150000;
+        border: 2px solid #150000;
+    }
+
+    .main-register-text {
+        font-size: .8rem;
+        text-align: justify;
     }
 
 }
