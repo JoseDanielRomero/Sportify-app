@@ -74,7 +74,7 @@ function RegisterPage() {
 							<button type='submit' className='form-button-container'>
 								<img src={triangleRight} className='triangle-for-button'/>
 								<div className='button-box black'>
-									<p className='button-text white'>LOGIN</p>
+									<p className='button-text white'>CREATE ACCOUNT</p>
 								</div>
 								<img src={triangleLeft} className='triangle-for-button'/>
 							</button>
@@ -82,10 +82,9 @@ function RegisterPage() {
 								By register you are consenting that your personal information will be collected, stored, and processed in the United States and the European Union on behalf of Sporify Properties, Inc.
 							</p>
               <div>
-                <button onClick={notify}>Notify!</button>
                 <ToastContainer
                   position="bottom-center"
-                  autoClose={5000}
+                  autoClose={3000}
                   hideProgressBar={false}
                   newestOnTop={false}
                   closeOnClick

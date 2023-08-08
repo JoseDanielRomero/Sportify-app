@@ -5,17 +5,29 @@ import triangleLeft from '../images/triangle-black-right.svg'
 import triangleGrayRight from '../images/triangle-strong-gray-left.svg'
 import triangleGrayLeft from '../images/triangle-strong-gray-right.svg'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
-import { Navigate } from 'react-router-dom'
+import { Navigate, Link } from 'react-router-dom'
 import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function LoginPage() {
 
-  const [isLoged, setIsLoged] = useState(false)
+  const [isLogged, setIsLogged] = useState(false)
 
 	const handleSubmitForm = (values, {resetForm}) => {
-		console.log(values)
-		resetForm({ values: '' })
-		setIsLoged(true)
+
+    const usersList = JSON.parse(localStorage.getItem('users')) || []
+    
+    const validUser = usersList.find(user => user.email === values.email &&  user.password === values.password)
+
+    if (validUser) {
+      localStorage.setItem('loggedUser', JSON.stringify(values))
+      resetForm({ values: '' })
+      setIsLogged(true)
+    } else {
+      notify()
+    }
+
 	}
 
 	const handleValidateForm = (values) => {
@@ -25,8 +37,10 @@ function LoginPage() {
 			return errors
 		}
 	}
+  
+  const notify = () => toast('Wrong credentials.');
 
-  if (isLoged == false) {
+  if (isLogged == false) {
 		return (
 			<div className='LoginPage'>
 				<header className='header-register'>
@@ -62,13 +76,26 @@ function LoginPage() {
                 Your Sportify account is now Sportify ID. If you’ve signed into the app before, use the same credentials here. otherwise
 							</p>
               <p className='or-text'>OR</p>
-              <button type='submit' className='form-button-container'>
+              <Link to='/register' className='form-button-container'>
 								<img src={triangleGrayRight} className='triangle-for-button'/>
 								<div className='button-box strong-gray'>
 									<p className='button-text black'>SIGN UP</p>
 								</div>
 								<img src={triangleGrayLeft} className='triangle-for-button'/>
-							</button>
+              </Link>
+              <div>
+                <ToastContainer
+                  position="bottom-center"
+                  autoClose={3000}
+                  hideProgressBar={false}
+                  newestOnTop={false}
+                  closeOnClick
+                  rtl={false}
+                  pauseOnFocusLoss
+                  draggable
+                  theme="light"
+                />
+              </div>
 						</Form>
 					</Formik>
 				</main>
@@ -76,7 +103,7 @@ function LoginPage() {
 		)
 	} else {
 		return (
-			<Navigate to="/onboard" />
+			<Navigate to="/" />
 		)
 	}
 }
