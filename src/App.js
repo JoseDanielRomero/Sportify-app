@@ -1,6 +1,7 @@
 import { createContext, useState } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import DashboardPage from './routes/DashboardPage';
+import FavLeaguesPage from './routes/FavLeaguesPage';
 import LoginPage from './routes/LoginPage';
 import MatchPage from './routes/MatchPage';
 import OnboardPage from './routes/OnboardPage';
@@ -104,6 +105,7 @@ function App() {
                     <Route path='/onboard' element={<OnboardPage />} />
                     <Route path='/register' element={<RegisterPage />} />
                     <Route path='/login' element={<LoginPage />} />
+                    <Route path='/my-leagues' element={<FavLeaguesPage />} />
                   </Routes>
                 </HashRouter>
               </ContentContext.Provider>
