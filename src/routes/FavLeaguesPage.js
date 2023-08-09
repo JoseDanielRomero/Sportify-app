@@ -3,6 +3,7 @@ import backIcon from '../images/back-white.svg'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 import FavSearchComponent from '../components/FavSearchComponent'
+import FavListComponent from '../components/FavListComponent'
 
 function FavLeaguesPage() {
 
@@ -68,6 +69,7 @@ function FavLeaguesPage() {
             )
           })}
         </section>
+        {actualFavToogle == 'My Favorites' && <FavListComponent type={'league'} />}
         {actualFavToogle == 'Search' && <FavSearchComponent type={'league'} />}
       </main>
     </div>

@@ -52,7 +52,7 @@
         justify-content: flex-start;
         border-bottom: 4px solid #FAFAFA;
         gap: 4%;
-        transition: all ease .2s;
+        transition: background-color ease .2s;
     }
 
     .search-result-name {
@@ -79,7 +79,7 @@
 
     .search-result-box.red {
         background-color: #D6D5D5;
-        transition: all ease .2s;
+        transition: background-color ease .2s;
     }
 
 }

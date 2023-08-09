@@ -13,6 +13,7 @@ export const TeamsContext = createContext([])
 export const SourceIdContext = createContext('')
 export const FixtureContext = createContext([])
 export const MatchInfoContext = createContext([]) 
+export const TempFavContext = createContext([])
 
 function App() {
   const options = [
@@ -90,6 +91,7 @@ function App() {
   const [sourceId, setSourceId] = useState(favLeagues[0].id)
   const [fixtureData, setFixtureData] = useState(fixtureOptions)
   const [matchData, setMatchData] = useState(matchInfoOptions)
+  const [tempFavData, setTempFavData] = useState([])
 
   return (
     <MatchInfoContext.Provider value={{ matchData, setMatchData }} >
@@ -98,16 +100,18 @@ function App() {
           <LeaguesContext.Provider value={{ favLeagues, setFavLeagues }} >
             <TeamsContext.Provider value={{ favTeams, setFavTeams }} >
               <ContentContext.Provider value={{ actualContent, setActualContent }}>
-                <HashRouter>
-                  <Routes>
-                    <Route path='/' element={<DashboardPage options={options} />} />
-                    <Route path='/match/:idMatch' element={<MatchPage />} />
-                    <Route path='/onboard' element={<OnboardPage />} />
-                    <Route path='/register' element={<RegisterPage />} />
-                    <Route path='/login' element={<LoginPage />} />
-                    <Route path='/my-leagues' element={<FavLeaguesPage />} />
-                  </Routes>
-                </HashRouter>
+                <TempFavContext.Provider value={{ tempFavData, setTempFavData }} >
+                  <HashRouter>
+                    <Routes>
+                      <Route path='/' element={<DashboardPage options={options} />} />
+                      <Route path='/match/:idMatch' element={<MatchPage />} />
+                      <Route path='/onboard' element={<OnboardPage />} />
+                      <Route path='/register' element={<RegisterPage />} />
+                      <Route path='/login' element={<LoginPage />} />
+                      <Route path='/my-leagues' element={<FavLeaguesPage />} />
+                    </Routes>
+                  </HashRouter>
+                </TempFavContext.Provider>
               </ContentContext.Provider>
             </TeamsContext.Provider>
           </LeaguesContext.Provider>

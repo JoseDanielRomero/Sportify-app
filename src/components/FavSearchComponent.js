@@ -1,15 +1,16 @@
 import '../stylesheets/FavSearchComponent.css'
-import { useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import triangleRight from '../images/triangle-black-left.svg'
 import triangleLeft from '../images/triangle-black-right.svg'
 import searchIcon from '../images/search.png'
 import axios from 'axios'
+import { TempFavContext } from '../App'
 
 function FavSearchComponent({ type }) {
 
   const [search, setSearch] = useState('')
   const [request, setRequest] = useState('')
-  const [tempFavData, setTempFavData] = useState([])
+  const { tempFavData, setTempFavData } = useContext(TempFavContext)
   const [searchDatabase, setSearchDatabase] = useState([])
 
   const handleSubmit = (e) => {
