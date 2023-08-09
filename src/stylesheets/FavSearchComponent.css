@@ -3,7 +3,7 @@
     .form-search {
         height: 6vh;
         width: 100%;
-        margin-bottom: 2vh;
+        margin-bottom: 3vh;
         display: flex;
         flex-direction: row;
         align-items: stretch;
@@ -39,6 +39,47 @@
     .form-search-icon {
         height: 14px;
         object-fit: cover;
+    }
+
+    .search-result-box {
+        height: 8vh;
+        background-color: white;
+        width: 100%;
+        padding: 4% 5%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        border-bottom: 4px solid #FAFAFA;
+        gap: 4%;
+        transition: all ease .2s;
+    }
+
+    .search-result-name {
+        font-size: .9rem;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        margin: 0;
+    }
+
+    .search-result-image-box {
+        height: 100%;
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .search-result-image {
+        object-fit: cover;
+        height: 30px;
+    }
+
+    .search-result-box.red {
+        background-color: #D6D5D5;
+        transition: all ease .2s;
     }
 
 }

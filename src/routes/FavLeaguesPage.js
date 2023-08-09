@@ -68,7 +68,7 @@ function FavLeaguesPage() {
             )
           })}
         </section>
-        {actualFavToogle == 'Search' && <FavSearchComponent />}
+        {actualFavToogle == 'Search' && <FavSearchComponent type={'league'} />}
       </main>
     </div>
   )
