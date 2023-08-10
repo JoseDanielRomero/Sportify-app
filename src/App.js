@@ -54,18 +54,12 @@ function App() {
     }
   ]
 
-  const favoriteLeagues = [
-    {
-      id: '242',
-      name: 'LigaPro',
-      active: true
-    }, 
-    {
-      id: '140',
-      name: 'LaLiga',
-      active: false
-    }
-  ]
+  const favLeaguesList = JSON.parse(localStorage.getItem('userLeagues')) || []
+  const loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
+  const userEmail = loggedUser.email
+  const databaseId = favLeaguesList.findIndex((element) => element.user === userEmail)
+
+  const favoriteLeagues = favLeaguesList[databaseId].data
 
   const favoriteTeams = [
     {

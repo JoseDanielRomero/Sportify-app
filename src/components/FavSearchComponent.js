@@ -5,6 +5,8 @@ import triangleLeft from '../images/triangle-black-right.svg'
 import searchIcon from '../images/search.png'
 import axios from 'axios'
 import { TempFavContext } from '../App'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function FavSearchComponent({ type }) {
 
@@ -55,25 +57,32 @@ function FavSearchComponent({ type }) {
 
   console.log(searchDatabase)
 
+  const notify = () => toast("You have reached the maximum of 4 favs, manage in 'My Favorites' tab");
+
   const handleClickResult = (result) => {
 
     const copyTempArray = [...tempFavData]
     const find = copyTempArray.findIndex((element) => element.id == result.league.id)
 
-    if (find == -1) {
-      copyTempArray.push(
-        {
-          id: result.league.id,
-          name: result.league.name,
-          active: false
-        }
-      )
-      setTempFavData(copyTempArray)
-
-    } else {
-      copyTempArray.splice(find, 1)
-      setTempFavData(copyTempArray)
-    }
+      if (find == -1 && copyTempArray.length <= 3) {
+        copyTempArray.push(
+          {
+            id: result.league.id,
+            name: result.league.name,
+            active: false
+          }
+        )
+        setTempFavData(copyTempArray)
+      } else if (find == -1 && copyTempArray.length == 4) {
+        notify()
+      }
+      
+      if (find > -1) {
+        copyTempArray.splice(find, 1)
+        setTempFavData(copyTempArray)
+      }
+    
+    
   }
 
   const handleClassResult = (result) => {
@@ -87,8 +96,6 @@ function FavSearchComponent({ type }) {
       return 'search-result-box red'
     }
   }
-
-  console.log(tempFavData)
 
   return (
     <>
@@ -118,6 +125,19 @@ function FavSearchComponent({ type }) {
           <p className='search-result-name'>{result.league.name.toUpperCase()}</p>
         </article>
       ))}
+      <div>
+        <ToastContainer
+          position="bottom-center"
+          autoClose={4000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          theme="light"
+        />
+      </div>
     </>
   )
 }

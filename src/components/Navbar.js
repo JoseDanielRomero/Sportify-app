@@ -24,7 +24,7 @@ function Navbar({ screen }) {
         <NavLink to='/' className='navicon-container'>
           <img src={homeIcon} className={handleClassIcon('dashboard')}/>
         </NavLink>
-        <NavLink to='/' className='navicon-container'>
+        <NavLink to='/my-leagues' className='navicon-container'>
           <img src={leagueIcon} className={handleClassIcon('leagues')}/>
         </NavLink >
         <NavLink to='/' className='navicon-container'>

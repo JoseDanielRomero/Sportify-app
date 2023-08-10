@@ -20,13 +20,16 @@
         background-color: #FF5050;
     }
 
-    .header-back-button-box {
-        height: 4vh;
+    .header-save-button-container {
+        height: 6vh;
         width: 100%;
-    }
-
-    .header-back-button-icon {
-        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+        padding: 0;
+        border: none;
+        background-color: transparent;
     }
 
     .header-leagues-big-title {
@@ -53,6 +56,15 @@
         justify-content: flex-start;
         padding: 1% 5%;
         padding-bottom: 5%;
+    }
+
+    .button-box.strong-gray.fav {
+        width: auto;
+        padding: 0 2%;
+    }
+
+    .button-text.black.fav {
+        font-size: 1.1rem;
     }
 
 }
