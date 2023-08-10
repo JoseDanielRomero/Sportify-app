@@ -1,6 +1,6 @@
 import '../stylesheets/FavLeaguesPage.css'
 import { Navigate } from 'react-router-dom'
-import { useState, useContext } from 'react'
+import { useState, useContext, useEffect } from 'react'
 import { TempFavContext } from '../App'
 import FavSearchComponent from '../components/FavSearchComponent'
 import FavListComponent from '../components/FavListComponent'
@@ -12,7 +12,17 @@ import 'react-toastify/dist/ReactToastify.css';
 function FavLeaguesPage() {
 
   const { tempFavData, setTempFavData } = useContext(TempFavContext)
-  const [successChanges, setSuccessChanges] = useState(false)
+
+  useEffect(() => {
+
+    const favLeaguesList = JSON.parse(localStorage.getItem('userLeagues')) || []
+    const loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
+    const userEmail = loggedUser.email
+    const databaseId = favLeaguesList.findIndex((element) => element.user === userEmail)
+  
+    setTempFavData(favLeaguesList[databaseId].data)
+
+  },[])
 
   const FavPageOptions = [
     {
@@ -63,14 +73,13 @@ function FavLeaguesPage() {
         favLeaguesList[databaseId].data = copyTempArray
         localStorage.setItem('userLeagues', JSON.stringify(favLeaguesList))
       }
-      setSuccessChanges(true)
+      setTempFavData([])
+      window.location.href = "/";
     } else {
       notify()
     }
 
   }
-
-  if (successChanges == false) {
 
   return (
     <div className='FavLeaguesPage'>
@@ -141,11 +150,6 @@ function FavLeaguesPage() {
       </main>
     </div>
   )
-  } else {
-    return (
-      <Navigate to='/' />
-    )
-  }
 }
 
 export default FavLeaguesPage

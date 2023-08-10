@@ -82,7 +82,7 @@ function App() {
   const [actualContent, setActualContent] = useState(options[0].value);
   const [favLeagues, setFavLeagues] = useState(favoriteLeagues);
   const [favTeams, setFavTeams] = useState(favoriteTeams);
-  const [sourceId, setSourceId] = useState(favLeagues[0].id)
+  const [sourceId, setSourceId] = useState('')
   const [fixtureData, setFixtureData] = useState(fixtureOptions)
   const [matchData, setMatchData] = useState(matchInfoOptions)
   const [tempFavData, setTempFavData] = useState([])

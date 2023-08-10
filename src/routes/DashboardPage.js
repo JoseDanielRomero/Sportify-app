@@ -38,6 +38,10 @@ function DashboardPage({ options }) {
 
     const obtainData = async() => {
 
+      if (sourceId.length == 0) {
+        setSourceId(favLeagues[0].id)
+      }
+
       const findActive = fixtureData.findIndex((element) => element.active === true)
       const actualFixture = fixtureData[findActive].param
 
