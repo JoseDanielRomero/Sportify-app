@@ -64,6 +64,8 @@ function DashboardPage({ options }) {
 
   },[sourceId, fixtureData])
 
+  console.log(sourceId)
+
   const userPermission = JSON.parse(localStorage.getItem('loggedUser'))
   
   if (userPermission) {

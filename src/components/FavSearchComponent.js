@@ -61,14 +61,24 @@ function FavSearchComponent({ type }) {
 
   const handleClickResult = (result) => {
 
+    var resultId;
+    var resultName; 
+    if (type === 'league') {
+      resultId = result.league.id
+      resultName = result.league.name
+    } else if (type === 'team') {
+      resultId = result.team.id
+      resultName = result.team.name
+    }
+
     const copyTempArray = [...tempFavData]
-    const find = copyTempArray.findIndex((element) => element.id == result.league.id)
+    const find = copyTempArray.findIndex((element) => element.id == resultId)
 
       if (find == -1 && copyTempArray.length <= 3) {
         copyTempArray.push(
           {
-            id: result.league.id,
-            name: result.league.name,
+            id: resultId,
+            name: resultName,
             active: false
           }
         )
@@ -82,13 +92,19 @@ function FavSearchComponent({ type }) {
         setTempFavData(copyTempArray)
       }
     
-    
   }
 
   const handleClassResult = (result) => {
 
+    var resultId;
+    if (type === 'league') {
+      resultId = result.league.id
+    } else if (type === 'team') {
+      resultId = result.team.id
+    }
+
     const copyTempArray = [...tempFavData]
-    const find = copyTempArray.findIndex((element) => element.id == result.league.id)
+    const find = copyTempArray.findIndex((element) => element.id == resultId)
 
     if (find == -1) {
       return 'search-result-box'
@@ -117,14 +133,30 @@ function FavSearchComponent({ type }) {
           <img src={triangleLeft} className='triangle-for-button'/>
         </button>
       </form>
-      {searchDatabase.map(result => (
-        <article className={handleClassResult(result)} key={result.league.id} onClick={()=>{handleClickResult(result)}}>
-          <div className='search-result-image-box'>
-            <img className='search-result-image' src={result.league.logo} />
-          </div>
-          <p className='search-result-name'>{result.league.name.toUpperCase()}</p>
-        </article>
-      ))}
+      {searchDatabase.map(result => {
+
+        var resultId;
+        var resultName; 
+        var resultIdLogo;
+        if (type === 'league') {
+          resultId = result.league.id
+          resultName = result.league.name
+          resultIdLogo = result.league.logo
+        } else if (type === 'team') {
+          resultId = result.team.id
+          resultName = result.team.name
+          resultIdLogo = result.team.logo
+        }
+
+        return (
+          <article className={handleClassResult(result)} key={resultId} onClick={()=>{handleClickResult(result)}}>
+            <div className='search-result-image-box'>
+              <img className='search-result-image' src={resultIdLogo} />
+            </div>
+            <p className='search-result-name'>{resultName.toUpperCase()}</p>
+          </article>
+        )
+      })}
       <div>
         <ToastContainer
           position="bottom-center"

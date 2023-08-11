@@ -2,6 +2,7 @@ import { createContext, useState } from 'react';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import DashboardPage from './routes/DashboardPage';
 import FavLeaguesPage from './routes/FavLeaguesPage';
+import FavTeamsPage from './routes/FavTeamsPage';
 import LoginPage from './routes/LoginPage';
 import MatchPage from './routes/MatchPage';
 import OnboardPage from './routes/OnboardPage';
@@ -54,30 +55,17 @@ function App() {
     }
   ]
 
-  const favLeaguesList = JSON.parse(localStorage.getItem('userLeagues')) || []
   const loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
   const userEmail = loggedUser.email
+
+  const favLeaguesList = JSON.parse(localStorage.getItem('userLeagues')) || []
+  const favTeamsList = JSON.parse(localStorage.getItem('userTeams')) || []
   const databaseId = favLeaguesList.findIndex((element) => element.user === userEmail)
+  const databaseId2 = favTeamsList.findIndex((element) => element.user === userEmail)
 
   const favoriteLeagues = favLeaguesList[databaseId].data
 
-  const favoriteTeams = [
-    {
-      id: '451',
-      name: 'Boca',
-      active: true
-    }, 
-    {
-      id: '1152',
-      name: 'Barcelona',
-      active: false
-    },
-    {
-      id: '51',
-      name: 'Brighton',
-      active: false
-    }
-  ]
+  const favoriteTeams = favTeamsList[databaseId2].data
 
   const [actualContent, setActualContent] = useState(options[0].value);
   const [favLeagues, setFavLeagues] = useState(favoriteLeagues);
@@ -103,6 +91,7 @@ function App() {
                       <Route path='/register' element={<RegisterPage />} />
                       <Route path='/login' element={<LoginPage />} />
                       <Route path='/my-leagues' element={<FavLeaguesPage />} />
+                      <Route path='/my-teams' element={<FavTeamsPage />} />
                     </Routes>
                   </HashRouter>
                 </TempFavContext.Provider>
