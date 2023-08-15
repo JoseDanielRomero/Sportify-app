@@ -38,10 +38,6 @@ function DashboardPage({ options }) {
 
     const obtainData = async() => {
 
-      if (sourceId.length == 0) {
-        setSourceId(favLeagues[0].id)
-      }
-
       const findActive = fixtureData.findIndex((element) => element.active === true)
       const actualFixture = fixtureData[findActive].param
 
@@ -64,77 +60,90 @@ function DashboardPage({ options }) {
 
   },[sourceId, fixtureData])
 
-  console.log(sourceId)
-
   const userPermission = JSON.parse(localStorage.getItem('loggedUser'))
   
   if (userPermission) {
-    return (
-      <div className='DashboardPage'>
-        <header className='header-dashboard'>
-          <div className='logo-box'>
-            <img className='logo-image' src={logoIcon}/>
-            <h1 className='logo-text'>SPORTIFY</h1>
-          </div>
-          <div className='dropdown-box'>
-            <img className='triangle-for-button' src={triangleLeft} />
-            <select value={actualContent} className='selectbox-form' onChange={handleChangeSelectbox} >
-              {options.map(option => (
-                <option key={option.value} value={option.value}>
-                  {option.text}
-                </option>
+
+    const loggedUser = JSON.parse(localStorage.getItem('loggedUser'))
+    const userEmail = loggedUser.email
+
+    const leaguesList = JSON.parse(localStorage.getItem('userLeagues'))
+    const teamsList = JSON.parse(localStorage.getItem('userTeams'))
+    const alreadyCompleteLeagues = leaguesList.findIndex((element) => element.user === userEmail)
+    const alreadyCompleteTeams = teamsList.findIndex((element) => element.user === userEmail)
+  
+    if (alreadyCompleteLeagues != -1 && alreadyCompleteTeams != -1) {
+      return (
+        <div className='DashboardPage'>
+          <header className='header-dashboard'>
+            <div className='logo-box'>
+              <img className='logo-image' src={logoIcon}/>
+              <h1 className='logo-text'>SPORTIFY</h1>
+            </div>
+            <div className='dropdown-box'>
+              <img className='triangle-for-button' src={triangleLeft} />
+              <select value={actualContent} className='selectbox-form' onChange={handleChangeSelectbox} >
+                {options.map(option => (
+                  <option key={option.value} value={option.value}>
+                    {option.text}
+                  </option>
+                ))}
+              </select>
+              <img className='triangle-for-button' src={triangleRight} />
+            </div>
+          </header>
+          <main className='main-dashboard'>
+            <section className='source-button-container'>
+              {actualContent == 'league' ? favLeagues.map(league => (
+                <SourceButton 
+                  key={league.id}
+                  imageId={league.id}
+                  name={league.name}
+                  array={favLeagues}
+                />
+              )) : favTeams.map(team => (
+                <SourceButton 
+                  key={team.id}
+                  imageId={team.id}
+                  name={team.name}
+                  array={favTeams}
+                />
               ))}
-            </select>
-            <img className='triangle-for-button' src={triangleRight} />
-          </div>
-        </header>
-        <main className='main-dashboard'>
-          <section className='source-button-container'>
-            {actualContent == 'league' ? favLeagues.map(league => (
-              <SourceButton 
-                key={league.id}
-                imageId={league.id}
-                name={league.name}
-                array={favLeagues}
-              />
-            )) : favTeams.map(team => (
-              <SourceButton 
-                key={team.id}
-                imageId={team.id}
-                name={team.name}
-                array={favTeams}
-              />
-            ))}
-          </section>
-          <FixtureSwitcher />
-          {database.map(match => {
-            const linkTo = '/match/' + match.fixture.id
-            return (
-            <NavLink to={linkTo} key={match.fixture.id}>
-              <MatchArticle 
-              datetime={match.fixture.date}
-              leagueLogo={match.league.logo}
-              leagueName={match.league.name}
-              leagueRound={match.league.round}
-              teamHomeName={match.teams.home.name}
-              teamHomeLogo={match.teams.home.logo}
-              teamHomeGoals={match.goals.home}
-              teamHomePenalty={match.score.penalty.home}
-              teamAwayName={match.teams.away.name}
-              teamAwayLogo={match.teams.away.logo}
-              teamAwayGoals={match.goals.away}
-              teamAwayPenalty={match.score.penalty.away}
-              />
-            </NavLink>
-          )})}
-          <Navbar 
-            screen='dashboard'
-          />
-        </main>
-        <footer>
-        </footer>
-      </div>
-    )
+            </section>
+            <FixtureSwitcher />
+            {database.map(match => {
+              const linkTo = '/match/' + match.fixture.id
+              return (
+              <NavLink to={linkTo} key={match.fixture.id}>
+                <MatchArticle 
+                datetime={match.fixture.date}
+                leagueLogo={match.league.logo}
+                leagueName={match.league.name}
+                leagueRound={match.league.round}
+                teamHomeName={match.teams.home.name}
+                teamHomeLogo={match.teams.home.logo}
+                teamHomeGoals={match.goals.home}
+                teamHomePenalty={match.score.penalty.home}
+                teamAwayName={match.teams.away.name}
+                teamAwayLogo={match.teams.away.logo}
+                teamAwayGoals={match.goals.away}
+                teamAwayPenalty={match.score.penalty.away}
+                />
+              </NavLink>
+            )})}
+            <Navbar 
+              screen='dashboard'
+            />
+          </main>
+          <footer>
+          </footer>
+        </div>
+      )
+    } else {
+      return (
+        <Navigate to="/my-leagues" />
+      )
+    } 
   } else {
     return (
       <Navigate to="/onboard" />

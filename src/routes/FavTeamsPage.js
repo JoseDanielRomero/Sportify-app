@@ -1,5 +1,4 @@
 import '../stylesheets/FavTeamsPage.css'
-import { Navigate } from 'react-router-dom'
 import { useState, useContext, useEffect } from 'react'
 import { TempFavContext } from '../App'
 import FavSearchComponent from '../components/FavSearchComponent'
@@ -20,7 +19,9 @@ function FavTeamsPage() {
     const userEmail = loggedUser.email
     const databaseId = favTeamsList.findIndex((element) => element.user === userEmail)
   
-    setTempFavData(favTeamsList[databaseId].data)
+    if (databaseId != -1) {
+      setTempFavData(favTeamsList[databaseId].data)
+    }
 
   },[])
 
@@ -74,7 +75,7 @@ function FavTeamsPage() {
         localStorage.setItem('userTeams', JSON.stringify(favTeamsList))
       }
       setTempFavData([])
-      window.location.href = "/";
+      window.location.href = "/#";
     } else {
       notify()
     }

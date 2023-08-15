@@ -1,5 +1,4 @@
 import '../stylesheets/FavLeaguesPage.css'
-import { Navigate } from 'react-router-dom'
 import { useState, useContext, useEffect } from 'react'
 import { TempFavContext } from '../App'
 import FavSearchComponent from '../components/FavSearchComponent'
@@ -20,7 +19,9 @@ function FavLeaguesPage() {
     const userEmail = loggedUser.email
     const databaseId = favLeaguesList.findIndex((element) => element.user === userEmail)
   
-    setTempFavData(favLeaguesList[databaseId].data)
+    if (databaseId != -1) {
+      setTempFavData(favLeaguesList[databaseId].data)
+    }
 
   },[])
 
@@ -74,7 +75,22 @@ function FavLeaguesPage() {
         localStorage.setItem('userLeagues', JSON.stringify(favLeaguesList))
       }
       setTempFavData([])
-      window.location.href = "/";
+      
+      const favLeaguesTeams = JSON.parse(localStorage.getItem('userTeams'))
+      const logged = JSON.parse(localStorage.getItem('loggedUser'))
+      const email = logged.email
+      const databaseId2 = favLeaguesTeams.findIndex((element) => element.user === email)
+
+      var url;
+
+      if (databaseId2 != 1) {
+        url = "/#/my-teams"
+      } else {
+        url = "/#"
+      }
+
+      window.location.href = url;
+
     } else {
       notify()
     }
