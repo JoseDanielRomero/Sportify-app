@@ -91,10 +91,14 @@ function FavLeaguesPage() {
 
       var url;
 
-      if (databaseId2 != 1) {
+      if (databaseId2 == -1) {
         url = "/#/my-teams"
       } else {
-        url = "/#"
+        url = "/"
+        const reloadUsingLocationHash = () => {
+          window.location.hash = "reload";
+        }
+        window.onload = reloadUsingLocationHash();
       }
 
       window.location.href = url;

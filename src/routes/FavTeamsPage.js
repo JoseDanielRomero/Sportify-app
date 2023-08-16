@@ -83,7 +83,11 @@ function FavTeamsPage() {
         localStorage.setItem('userTeams', JSON.stringify(favTeamsList))
       }
       setTempFavData([])
-      window.location.href = "/#";
+      const reloadUsingLocationHash = () => {
+        window.location.hash = "reload";
+      }
+      window.onload = reloadUsingLocationHash();
+      window.location.href = "/";
     } else {
       notify()
     }
