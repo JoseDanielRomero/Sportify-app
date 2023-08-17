@@ -2,126 +2,136 @@
     --toastify-color-progress-light: #FF5050 !important;
 }
 
+.RegisterPage {
+    height: 100vh;
+    width: 100vw;
+    padding-bottom: 5vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-register {
+    height: 40vh;
+    width: 100%;
+    padding: 3% 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    background-color: #FF5050;
+    gap: 5vh;
+}
+
+.logo-text.white {
+    color: white;
+    z-index: 200;
+} 
+
+.logo-image.white {
+    z-index: 200;
+}
+
+.header-register-text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.header-register-title {
+    color: white;
+    font-family: Bebas Neue;
+    font-size: 1.5rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+    margin-top: 2vh;
+    margin-bottom: 1.2vh;
+}
+
+.header-register-subtitle {
+    color: white;
+    margin: 0;
+    line-height: 1.2rem;
+    margin-bottom: 1vh;
+}
+
+.header-register-big-title {
+    color: white;
+    font-family: Bebas Neue;
+    font-size: 8rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 95%;
+    z-index: 10;
+    text-align: left;
+    margin: 0;
+    position: absolute;
+    top: 11%;
+    right: 0;
+    opacity: 0.1;
+}
+
+.main-register {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 3% 5%;
+}
+
+.form-input {
+    background-color: #F4F4F4;
+    height: 6vh;
+    width: 100%;
+    border: none;
+    margin-bottom: 2vh;
+    padding: 0 4%;
+    outline: none;
+    font-size: .9rem;
+}
+
+.form-input::placeholder {
+    color: #A8A8A8;
+}
+
+.form-button-container {
+    height: 6.5vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    margin: 3vh 0;
+}
+
+.button-box.black {
+    background-color: #150000;
+    border: 2px solid #150000;
+}
+
+.main-register-text {
+    font-size: .8rem;
+    text-align: justify;
+}
+
 @media screen and (max-width: 480px) {
 
-    .RegisterPage {
-        height: 100vh;
-        width: 100vw;
-        padding-bottom: 5vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
-    }
-
     .header-register {
-        height: 40vh;
-        width: 100%;
         padding: 6% 5%;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: space-between;
-        background-color: #FF5050;
-    }
-
-    .logo-text.white {
-        color: white;
-        z-index: 200;
-    } 
-
-    .logo-image.white {
-        z-index: 200;
-    }
-
-    .header-register-text-box {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-    }
-
-    .header-register-title {
-        color: white;
-        font-family: Bebas Neue;
-        font-size: 1.5rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        margin: 0;
-        margin-top: 2vh;
-        margin-bottom: 1.2vh;
-    }
-
-    .header-register-subtitle {
-        color: white;
-        margin: 0;
-        line-height: 1.2rem;
-        margin-bottom: 1vh;
-    }
-
-    .header-register-big-title {
-        color: white;
-        font-family: Bebas Neue;
-        font-size: 8rem;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 95%;
-        z-index: 10;
-        text-align: left;
-        margin: 0;
-        position: absolute;
-        top: 11%;
-        right: 0;
-        opacity: 0.1;
+        gap: 0;
     }
 
     .main-register {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: stretch;
-        justify-content: flex-start;
         padding: 5% 5%;
-    }
-
-    .form-input {
-        background-color: #F4F4F4;
-        height: 6vh;
-        width: 100%;
-        border: none;
-        margin-bottom: 2vh;
-        padding: 0 4%;
-        outline: none;
-        font-size: .9rem;
-    }
-
-    .form-input::placeholder {
-        color: #A8A8A8;
-    }
-
-    .form-button-container {
-        height: 6.5vh;
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        padding: 0;
-        border: none;
-        background-color: transparent;
-        margin: 3vh 0;
-    }
-
-    .button-box.black {
-        background-color: #150000;
-        border: 2px solid #150000;
-    }
-
-    .main-register-text {
-        font-size: .8rem;
-        text-align: justify;
     }
 
 }

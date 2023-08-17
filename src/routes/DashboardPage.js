@@ -114,7 +114,7 @@ function DashboardPage({ options }) {
             {database.map(match => {
               const linkTo = '/match/' + match.fixture.id
               return (
-              <NavLink to={linkTo} key={match.fixture.id}>
+              <NavLink to={linkTo} key={match.fixture.id} className='match-navlink-container'>
                 <MatchArticle 
                 datetime={match.fixture.date}
                 leagueLogo={match.league.logo}
