@@ -6,6 +6,7 @@ import FavTeamsPage from './routes/FavTeamsPage';
 import LoginPage from './routes/LoginPage';
 import MatchPage from './routes/MatchPage';
 import OnboardPage from './routes/OnboardPage';
+import ProfilePage from './routes/ProfilePage';
 import RegisterPage from './routes/RegisterPage';
 
 export const ContentContext = createContext([])
@@ -151,6 +152,7 @@ function App() {
                       <Route path='/login' element={<LoginPage />} />
                       <Route path='/my-leagues' element={<FavLeaguesPage />} />
                       <Route path='/my-teams' element={<FavTeamsPage />} />
+                      <Route path='/profile' element={<ProfilePage />} />
                     </Routes>
                   </HashRouter>
                 </TempFavContext.Provider>
