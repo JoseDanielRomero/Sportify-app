@@ -1,46 +1,42 @@
-@media screen and (max-width: 480px) {
+.navbar-section {
+    height: 6.5vh;
+    width: 88%;
+    position:fixed; 
+    bottom: 4vh; 
+    z-index:999999;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
-    .navbar-section {
-        height: 6.5vh;
-        width: 88%;
-        position:fixed; 
-        bottom: 4vh; 
-        z-index:999999;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
+.navbar-container {
+    height: 100%;
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-around;
+    border: 2px solid #FFFFFF;
+}
 
-    .navbar-container {
-        height: 100%;
-        width: 100%;
-        background-color: #FFFFFF;
-        display: flex;
-        flex-direction: row;
-        align-items: stretch;
-        justify-content: space-around;
-        border: 2px solid #FFFFFF;
-    }
+.triangle-for-navbar {
+    height: 100%;
+}
 
-    .triangle-for-navbar {
-        height: 100%;
-    }
+.navicon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
 
-    .navicon-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
+.nav-icon {
+    height: 60%;
+    padding: 1px 0;
+}
 
-    .nav-icon {
-        height: 60%;
-        padding: 1px 0;
-    }
-
-    .nav-icon.selected {
-        filter: invert(41%) sepia(33%) saturate(2319%) hue-rotate(326deg) brightness(103%) contrast(87%);
-    }
-
+.nav-icon.selected {
+    filter: invert(41%) sepia(33%) saturate(2319%) hue-rotate(326deg) brightness(103%) contrast(87%);
 }

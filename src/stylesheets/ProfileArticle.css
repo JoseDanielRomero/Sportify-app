@@ -1,55 +1,64 @@
+.main-profile-article {
+    width: 100%;
+}
+
+.main-profile-title-box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: .8vh;
+}
+
+.main-profile-title {
+    font-family: Bebas Neue;
+    font-size: 1.3rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin: 0;
+}
+
+.main-profile-title:hover {
+    cursor: pointer;
+}
+
+.main-profile-text {
+    width: 95%;
+    margin: 0;
+    color: #150000;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.2rem;
+    text-align: left;
+}
+
+.main-profile-icon.plus {
+    height: 14px;
+    width: 14px;
+    background-image: url('../images/plus.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-profile-icon.minus {
+    height: 14px;
+    width: 14px;
+    background-image: url('../images/minus.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main-profile-icon:hover {
+    cursor: pointer;
+}
+
+.main-profile-text.hidden {
+    display: none;
+}
+
 @media screen and (max-width: 480px) {
 
-    .main-profile-article {
-        width: 100%;
-    }
-
-    .main-profile-title-box {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        margin-bottom: .8vh;
-    }
-
-    .main-profile-title {
-        font-family: Bebas Neue;
-        font-size: 1.3rem;
-        font-style: normal;
-        font-weight: 700;
-        line-height: normal;
-        margin: 0;
-    }
-
-    .main-profile-text {
-        width: 95%;
-        margin: 0;
-        color: #150000;
-        font-size: 1rem;
-        font-weight: 500;
-        line-height: 1.2rem;
-        text-align: left;
-    }
-
-    .main-profile-icon.plus {
-        height: 14px;
-        width: 14px;
-        background-image: url('../images/plus.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .main-profile-icon.minus {
-        height: 14px;
-        width: 14px;
-        background-image: url('../images/minus.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .main-profile-text.hidden {
-        display: none;
-    }
 
 }
