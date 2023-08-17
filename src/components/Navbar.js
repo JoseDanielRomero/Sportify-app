@@ -30,7 +30,7 @@ function Navbar({ screen }) {
         <NavLink to='/my-teams' className='navicon-container'>
           <img src={teamIcon} className={handleClassIcon('teams')}/>
         </NavLink >
-        <NavLink to='/' className='navicon-container'>
+        <NavLink to='/profile' className='navicon-container'>
           <img src={userIcon} className={handleClassIcon('user')}/>
         </NavLink >
       </div>

@@ -1,5 +1,9 @@
 @media screen and (max-width: 480px) {
 
+    .main-profile-article {
+        width: 100%;
+    }
+
     .main-profile-title-box {
         width: 100%;
         display: flex;

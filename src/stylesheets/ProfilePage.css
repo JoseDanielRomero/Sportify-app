@@ -34,10 +34,20 @@
         width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: stretch;
+        align-items: center;
         justify-content: flex-start;
         padding: 5% 5%;
         gap: 4vh;
+    }
+
+    .form-button-container.profile {
+        width: 45%;
+        margin: 0;
+    }
+
+    .footer-profile {
+        height: 10vh;
+        width: 100%;
     }
 
 }
