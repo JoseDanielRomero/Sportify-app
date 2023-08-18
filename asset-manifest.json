@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/Sportify-app/static/css/main.4b848098.css",
+    "main.js": "/Sportify-app/static/js/main.21f9edea.js",
+    "static/media/player.svg": "/Sportify-app/static/media/player.a002ed455554f33623836038b8bbed3f.svg",
+    "static/media/vector-complete.png": "/Sportify-app/static/media/vector-complete.b14765f0e1ee614c4d97.png",
+    "static/media/vector-stripe.png": "/Sportify-app/static/media/vector-stripe.617fd3bb22670f31f0aa.png",
+    "static/media/team.png": "/Sportify-app/static/media/team.319617b02b95d9f3b427.png",
+    "static/media/vector-cropped.png": "/Sportify-app/static/media/vector-cropped.b6541670ad06adbb77b3.png",
+    "static/media/logo-white.svg": "/Sportify-app/static/media/logo-white.af1dcfee24190e20c67f6fb4fbafb676.svg",
+    "static/media/logo.svg": "/Sportify-app/static/media/logo.c855046af28034be66642657e3772dc1.svg",
+    "index.html": "/Sportify-app/index.html",
+    "static/media/triangle-gray-left.svg": "/Sportify-app/static/media/triangle-gray-left.06840b11bcd9e26624feb4fdaf3ea1cb.svg",
+    "static/media/triangle-gray-right.svg": "/Sportify-app/static/media/triangle-gray-right.244622498eeec27c7ce87737ead74a35.svg",
+    "static/media/back.svg": "/Sportify-app/static/media/back.638156f85fe3b0be10d347114be9680f.svg",
+    "static/media/triangle-left.svg": "/Sportify-app/static/media/triangle-left.aae5bf2171d60716781e1c1fcb107ce6.svg",
+    "static/media/triangle-right.svg": "/Sportify-app/static/media/triangle-right.b69879a7a9d957435b99b491ed09438a.svg",
+    "static/media/triangle-navbar-right.svg": "/Sportify-app/static/media/triangle-navbar-right.a14f533169fb6a3f8a607978d13b9d40.svg",
+    "static/media/triangle-navbar-left.svg": "/Sportify-app/static/media/triangle-navbar-left.6ea1a1cb4502a530c33b4e22157ed6c8.svg",
+    "static/media/triangle-black-left.svg": "/Sportify-app/static/media/triangle-black-left.914407ce5ed0c3bfeeb4d11ab2a7e02e.svg",
+    "static/media/triangle-black-right.svg": "/Sportify-app/static/media/triangle-black-right.bbb26c719d539c7a0c8ff5d8acfedfc8.svg",
+    "static/media/triangle-strong-gray-left.svg": "/Sportify-app/static/media/triangle-strong-gray-left.4151da950f9d70f077142f1303fd1b2e.svg",
+    "static/media/triangle-strong-gray-right.svg": "/Sportify-app/static/media/triangle-strong-gray-right.898a58856a0bf792a1cf360faeda6452.svg",
+    "main.4b848098.css.map": "/Sportify-app/static/css/main.4b848098.css.map",
+    "main.21f9edea.js.map": "/Sportify-app/static/js/main.21f9edea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b848098.css",
+    "static/js/main.21f9edea.js"
+  ]
+}
