@@ -4,13 +4,10 @@ import triangleRight from '../images/triangle-black-left.svg'
 import triangleLeft from '../images/triangle-black-right.svg'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
 import { Navigate } from 'react-router-dom'
-import { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function RegisterPage() {
-
-	const [isCreated, setIsCreated] = useState(false)
 
 	const handleSubmitForm = (values, {resetForm}) => {
 
@@ -24,7 +21,7 @@ function RegisterPage() {
       usersList.push(values)
       localStorage.setItem('users', JSON.stringify(usersList))
       resetForm({ values: '' })
-      setIsCreated(true)
+      window.location.href = "/#/login"
     }
 
 	}
@@ -39,7 +36,13 @@ function RegisterPage() {
 
   const notify = () => toast('The user is already registered.');
 
-  if (isCreated == false) {
+  const alreadyLogged = JSON.parse(localStorage.getItem('loggedUser'))
+  
+  if (alreadyLogged) {
+    return (
+      <Navigate to="/" />
+    )
+  } else {
 		return (
 			<div className='RegisterPage'>
 				<header className='header-register'>
@@ -99,11 +102,7 @@ function RegisterPage() {
 				</main>
 			</div>
 		)
-	} else {
-		return (
-			<Navigate to="/login" />
-		)
-	}
+  }
 }
 
 export default RegisterPage

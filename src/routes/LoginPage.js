@@ -5,7 +5,7 @@ import triangleLeft from '../images/triangle-black-right.svg'
 import triangleGrayRight from '../images/triangle-strong-gray-left.svg'
 import triangleGrayLeft from '../images/triangle-strong-gray-right.svg'
 import { ErrorMessage, Field, Form, Formik } from 'formik'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -41,6 +41,13 @@ function LoginPage() {
   
   const notify = () => toast('Wrong credentials.');
 
+  const alreadyLogged = JSON.parse(localStorage.getItem('loggedUser'))
+  
+  if (alreadyLogged) {
+    return (
+      <Navigate to="/" />
+    )
+  } else {
 		return (
 			<div className='LoginPage'>
 				<header className='header-register'>
@@ -101,6 +108,7 @@ function LoginPage() {
 				</main>
 			</div>
 		)
+  }
 }
 
 export default LoginPage
