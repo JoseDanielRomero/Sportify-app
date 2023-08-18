@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Sportify-app/static/css/main.4b848098.css",
-    "main.js": "/Sportify-app/static/js/main.21f9edea.js",
+    "main.js": "/Sportify-app/static/js/main.6c547abf.js",
     "static/media/player.svg": "/Sportify-app/static/media/player.a002ed455554f33623836038b8bbed3f.svg",
     "static/media/vector-complete.png": "/Sportify-app/static/media/vector-complete.b14765f0e1ee614c4d97.png",
     "static/media/vector-stripe.png": "/Sportify-app/static/media/vector-stripe.617fd3bb22670f31f0aa.png",
@@ -22,10 +22,10 @@
     "static/media/triangle-strong-gray-left.svg": "/Sportify-app/static/media/triangle-strong-gray-left.4151da950f9d70f077142f1303fd1b2e.svg",
     "static/media/triangle-strong-gray-right.svg": "/Sportify-app/static/media/triangle-strong-gray-right.898a58856a0bf792a1cf360faeda6452.svg",
     "main.4b848098.css.map": "/Sportify-app/static/css/main.4b848098.css.map",
-    "main.21f9edea.js.map": "/Sportify-app/static/js/main.21f9edea.js.map"
+    "main.6c547abf.js.map": "/Sportify-app/static/js/main.6c547abf.js.map"
   },
   "entrypoints": [
     "static/css/main.4b848098.css",
-    "static/js/main.21f9edea.js"
+    "static/js/main.6c547abf.js"
   ]
 }
