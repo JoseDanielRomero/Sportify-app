@@ -21,7 +21,7 @@ function RegisterPage() {
       usersList.push(values)
       localStorage.setItem('users', JSON.stringify(usersList))
       resetForm({ values: '' })
-      window.location.href = "/#/login"
+      window.location.href = "/Sportify-app/#/login"
     }
 
 	}

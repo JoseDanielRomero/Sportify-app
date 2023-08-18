@@ -24,7 +24,7 @@ function LoginPage() {
         window.location.hash = "reload";
       }
       window.onload = reloadUsingLocationHash();
-      window.location.href = "/";
+      window.location.href = "/Sportify-app";
     } else {
       notify()
     }

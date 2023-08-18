@@ -92,9 +92,9 @@ function FavLeaguesPage() {
       var url;
 
       if (databaseId2 == -1) {
-        url = "/#/my-teams"
+        url = "/Sportify-app/#/my-teams"
       } else {
-        url = "/"
+        url = "/Sportify-app"
         const reloadUsingLocationHash = () => {
           window.location.hash = "reload";
         }

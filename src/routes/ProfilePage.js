@@ -40,7 +40,7 @@ function ProfilePage() {
 
   const handleClickSignOut = () => {
     localStorage.removeItem('loggedUser')
-    window.location.href = "/#/onboard"
+    window.location.href = "/Sportify-app/#/onboard"
   }
 
   const userPermission = JSON.parse(localStorage.getItem('loggedUser'))
