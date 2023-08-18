@@ -1,4 +1,3 @@
-import '../stylesheets/FavListComponent.css'
 import { useContext } from 'react'
 import { TempFavContext } from '../App'
 

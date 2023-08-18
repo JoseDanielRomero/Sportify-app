@@ -55,8 +55,6 @@ function FavSearchComponent({ type }) {
 
   },[request])
 
-  console.log(searchDatabase)
-
   const notify = () => toast("You have reached the maximum of 4 favs, manage in 'My Favorites' tab");
 
   const handleClickResult = (result) => {

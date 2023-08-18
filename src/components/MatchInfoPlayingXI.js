@@ -29,8 +29,6 @@ function MatchInfoPlayingXI({ fixtureId }) {
 
   },[])
 
-  console.log(lineupDatabase)
-
   if (lineupDatabase.length > 0) {
     return (
       <article className='main-lineup-playingXI-container'>

@@ -30,8 +30,6 @@ function MatchInfoStats({ fixtureId }) {
 
   },[])
 
-  console.log(statsDatabase)
-
   if (statsDatabase.length > 0) {
 
     const obtainStatsValue = (type, teamIndex) => {

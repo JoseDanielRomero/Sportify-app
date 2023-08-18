@@ -38,8 +38,6 @@ function MatchPage() {
 
   },[idMatch])
 
-  console.log(matchDatabase)
-
   const userPermission = JSON.parse(localStorage.getItem('loggedUser'))
   
   if (userPermission) {
