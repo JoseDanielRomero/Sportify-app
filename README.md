@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+<div align='center'>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Sportify-app
 
-## Available Scripts
+Latest football results, statistics and data, all in one website.
 
-In the project directory, you can run:
+</div>
 
-### `npm start`
+## 📷 Screenshots
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+<div align='center'>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<img src="https://i.ibb.co/RDkm7G4/Captura-de-pantalla-2023-09-05-a-la-s-13-37-53.png" style="width: 30%"  />
+<img src="https://i.ibb.co/jGJ0V1b/Captura-de-pantalla-2023-09-05-a-la-s-13-26-33.png" style="width: 30%"  />
+<img src="https://i.ibb.co/sRrhY8n/Captura-de-pantalla-2023-09-05-a-la-s-13-30-38.png" style="width: 30%"  />
+<img src="https://i.ibb.co/Fmywg91/Captura-de-pantalla-2023-09-05-a-la-s-13-32-50.png" style="width: 30%"  />
+<img src="https://i.ibb.co/hyJFvm3/Captura-de-pantalla-2023-09-05-a-la-s-13-33-56.png" style="width: 30%"  />
+<img src="https://i.ibb.co/1nVXx85/Captura-de-pantalla-2023-09-05-a-la-s-13-44-27.png" style="width: 30%"  />
 
-### `npm test`
+</div>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 💻 Tech
 
-### `npm run build`
+<img src="https://skillicons.dev/icons?i=react,javascript,html,css"></img>
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🚀 Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Users can:
 
-### `npm run eject`
+<img src="https://octodex.github.com/images/inspectocat.jpg" style="width: 25%" align="right">
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Create an account (Sportify ID) which allows you to choose up to 4 leagues and 4 favorite football teams.
+- Search by club/competition name accurately, showing all matches with the entered name.
+- Modify favorites at any time in the corresponding 'Teams' and 'Leagues' tabs.
+- Switch between Leagues and Teams to display on the dashboard.
+- Select the content to display between 'Upcoming matches' and 'Past matches'.
+- Display the main match data such as score, competition name, fixture, day and time.
+- Query data of an specific match in a more extended way, this information includes:
+  - Stats: Ball posession, shots, free kicks and cards.
+  - Playing XI: Starting lineup and substitutes for both home and away team.
+  - Details: Referee, city and stadium.
+- Log out at any time from the 'Profile' tab.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 📦 Dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- react
+- react-dom
+- react-router-dom
+- react-toastify
+- formik
+- axios
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🔎 API
 
-## Learn More
+Data provided through API-Sports.io - https://www.api-football.com (Free plan, 100 Requests / day)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 🎨 UX/UI design
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Template design by Visiata Systems International.
 
-### Code Splitting
+## 🌎 Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+You can try and interact with the website [here](https://josedanielromero.github.io/Sportify-app/).
 
-### Analyzing the Bundle Size
+## 👥 Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Email: danyrome12.dev@gmail.com
+- Github: JoseDanielRomero
+- Linkedin: jose-daniel-romero-t

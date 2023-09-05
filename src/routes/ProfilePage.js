@@ -24,7 +24,7 @@ function ProfilePage() {
     }, 
     {
       title: 'CUSTOMER SUPPORT',
-      text: 'Contact directly to danyrome12dev@gmail.com',
+      text: 'Contact directly to danyrome12.dev@gmail.com',
       active: false,
       id: 1
     },
