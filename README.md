@@ -30,7 +30,7 @@ Users can:
 
 <img src="https://octodex.github.com/images/inspectocat.jpg" style="width: 25%" align="right">
 
-- Create an account (Sportify ID) which allows you to choose up to 4 leagues and 4 favorite football teams.
+- Create an account (Sportify ID) which allows you to choose up to 4 leagues and favorite football teams.
 - Search by club/competition name accurately, showing all matches with the entered name.
 - Modify favorites at any time in the corresponding 'Teams' and 'Leagues' tabs.
 - Switch between Leagues and Teams to display on the dashboard.
